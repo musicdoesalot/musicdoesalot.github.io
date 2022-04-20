@@ -171,7 +171,6 @@ body::before {
   border-color: #000 #101010 #000 #101010;
   position: relative;
   overflow: hidden;
-  padding: 1px;
 }
 
 .curtain::before {
@@ -194,7 +193,6 @@ body::before {
   bottom: 0;
   top: 0;
   border: 1px solid #0059dd;
-  z-index: 2;
   pointer-events: none;
 }
 
