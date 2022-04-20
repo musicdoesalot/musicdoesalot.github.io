@@ -310,7 +310,6 @@ iframe {
 .panel-left,
 .panel-right {
   position: fixed;
-  z-index: 3;
   height: 100%;
   width: 50%;
   top: 0%;
@@ -319,10 +318,26 @@ iframe {
 
 .panel-left {
   left: 0;
+  animation: slideLeft 8s forwards;
+  animation-delay: 700ms;
+}
+
+@keyframes slideLeft {
+  to {
+    transform: translateX(calc(-100% - 1px));
+  }
 }
 
 .panel-right {
   right: 0;
+  animation: slideRight 8s forwards;
+  animation-delay: 700ms;
+}
+
+@keyframes slideRight {
+  to {
+    transform: translateX(calc(100% + 1px));
+  }
 }
 
 .panel-left::before,
@@ -338,28 +353,6 @@ iframe {
 
 .panel-right::before {
   left: -100%;
-}
-
-.curtain .panel-left {
-  animation: slideLeft 8s forwards;
-  animation-delay: 700ms;
-}
-
-@keyframes slideLeft {
-  to {
-    transform: translateX(calc(-100% - 1px));
-  }
-}
-
-.curtain .panel-right {
-  animation: slideRight 8s forwards;
-  animation-delay: 700ms;
-}
-
-@keyframes slideRight {
-  to {
-    transform: translateX(calc(100% + 1px));
-  }
 }
 
 .panel-left p,
@@ -386,12 +379,12 @@ iframe {
   left: -100%;
 }
 
-.panel-left::before,
-.panel-right::before,
+.panel-left,
+.panel-right,
 .panel-left p,
 .panel-right p {
   content: "";
-  animation: fadeOut 1ms ease-in 8s forwards;
+  animation: fadeOut 1ms ease-in 2s forwards;
 }
 
 @keyframes fadeOut {
