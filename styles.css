@@ -382,7 +382,7 @@ iframe {
 .panel-left p,
 .panel-right p {
   content: "";
-  animation: fadeOut 1s ease-in 2s forwards;
+  animation: fadeOut 1s ease-in 8s forwards;
 }
 
 @keyframes fadeOut {
