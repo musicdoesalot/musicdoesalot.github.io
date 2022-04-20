@@ -385,3 +385,17 @@ iframe {
 .panel-right p {
   left: -100%;
 }
+
+.panel-left::before,
+.panel-right::before,
+.panel-left p,
+.panel-right p {
+  content: "";
+  animation: fadeOut 1ms ease-in 8s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
