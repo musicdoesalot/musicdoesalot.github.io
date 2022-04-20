@@ -379,12 +379,12 @@ iframe {
   left: -100%;
 }
 
-.panel-left,
-.panel-right,
+.panel-left::before,
+.panel-right::before,
 .panel-left p,
 .panel-right p {
   content: "";
-  animation: fadeOut 1ms ease-in 2s forwards;
+  animation: fadeOut 1s ease-in 2s forwards;
 }
 
 @keyframes fadeOut {
