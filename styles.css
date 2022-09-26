@@ -6,7 +6,28 @@ body {
 }
 
 body {
-  background-image: repeating-linear-gradient(135deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 10px, transparent 10px, transparent 11px), repeating-linear-gradient(22.5deg, rgb(0, 0, 0) 0px, rgb(0, 0, 0) 10px, transparent 10px, transparent 11px), linear-gradient(90deg, rgb(0, 89, 221), rgb(0, 89, 221), rgb(0, 89, 221), rgb(0, 89, 221), rgb(0, 89, 221));
+  background-image: repeating-linear-gradient(
+      135deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 10px,
+      transparent 10px,
+      transparent 11px
+    ),
+    repeating-linear-gradient(
+      22.5deg,
+      rgb(0, 0, 0) 0px,
+      rgb(0, 0, 0) 10px,
+      transparent 10px,
+      transparent 11px
+    ),
+    linear-gradient(
+      90deg,
+      rgb(0, 89, 221),
+      rgb(0, 89, 221),
+      rgb(0, 89, 221),
+      rgb(0, 89, 221),
+      rgb(0, 89, 221)
+    );
 }
 
 .container {
