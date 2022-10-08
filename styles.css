@@ -236,6 +236,63 @@ iframe {
   box-shadow: 0 0 0 5px rgba(0, 255, 255, 0.5);
 }
 
+.exit {
+  position: absolute;
+  top: auto;
+  bottom: -47.63px;
+  margin: auto;
+  right: 0;
+  left: 0;
+  width: 47px;
+  height: 47px;
+  cursor: default;
+  border-radius: 100%;
+  background: transparent;
+  border: 5px solid red;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  clip-path: circle(50%);
+}
+
+.slide .exit {
+  animation: fadeInExit 3s ease forwards 7.5s;
+}
+
+@keyframes fadeInExit {
+  99% {
+    pointer-events: none;
+  }
+
+  100% {
+    pointer-events: initial;
+    opacity: 1;
+    cursor: pointer;
+  }
+}
+
+.exit::before,
+.exit::after {
+  content: "";
+  background-color: red;
+  width: 47px;
+  height: 5px;
+  position: absolute;
+  top: 0px;
+  left: -5px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.exit::before {
+  transform: rotate(45deg);
+}
+
+.exit::after {
+  transform: rotate(-45deg);
+}
+
 .hide {
   display: none;
 }
