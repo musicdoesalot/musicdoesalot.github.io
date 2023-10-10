@@ -1,63 +1,159 @@
+.bg1 {
+  --color: linear-gradient(to bottom right, #180cac, #d054e4);
+}
+
+.bg2 {
+  --color: linear-gradient(-225deg, rgb(117, 93, 213) 35%, rgb(55, 136, 209) 100%);
+}
+
+.bg3 {
+  --color: linear-gradient(135deg, rgb(44, 209, 255) 0%, rgb(250, 139, 255) 100%);
+}
+
+.bg4 {
+  --color: linear-gradient(155deg, #0190df, #9300e4);
+}
+
+.bg5 {
+  --color: linear-gradient(143deg, #504099 0%, #32C39F 100%);
+}
+
+.bg6 {
+  --color: linear-gradient(167deg, #238af8 0%, #27e0c0 100%);
+}
+
+.bg7 {
+  --color: linear-gradient(110deg, #1e089b, #4702a0);
+}
+
+.bg8 {
+  --color: linear-gradient(45deg, rgb(200, 25, 210), rgb(20, 55, 110));
+}
+
+.bg9 {
+  --color: linear-gradient(61.63deg, rgb(45, 66, 255) -15.05%, rgb(156, 99, 250) 104.96%);
+}
+
 html,
 body {
   height: 100%;
-  background: url("https://i.imgur.com/TSD1Xp1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-body {
-  display: flex;
+body::before {
+  content: "";
+  background: var(--color);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
-.playButtonContainer {
-  display: flex;
-  flex-wrap: wrap;
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
   min-height: 100%;
-  margin: auto;
-  justify-content: center;
-  align-content: center;
-  max-width: 800px;
-  gap: 18px;
-  animation: fadeInButtons 3s ease-in 0s forwards;
-}
-
-.buttonContainer {
   display: flex;
-  flex-wrap: wrap;
-  min-height: 100%;
-  margin: auto;
-  justify-content: center;
-  align-content: center;
-  max-width: 600px;
-  gap: 18px;
 }
 
-.playButton {
+.video-wrapper {
+  flex: 1 0 0;
+  margin: auto;
+  max-width: 642px;
+  position: relative;
+}
+
+.ratio-keeper {
+  height: 0;
+  padding-top: 56.25%;
+}
+
+.video-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+iframe {
+  user-select: none;
+}
+
+.fadeBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  pointer-events: none;
+  animation: fadeOut 2s ease-in 700ms forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.exit {
+  position: absolute;
+  top: auto;
+  bottom: -47px;
+  margin: auto;
+  right: 0;
+  left: 0;
+  width: 37px;
+  height: 37px;
   cursor: pointer;
-  /* background-color: white;*/
-  border: 1px solid black;
+  background: black;
+  border-radius: 50%;
+  border: 5px solid red;
+  animation: fadeInExit 11s ease-in 3s forwards;
+  animation-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
 }
 
-.playButton:hover {
-  background-color: cornflowerblue;
-  border: 1px solid black;
+@keyframes fadeInExit {
+  99% {
+
+    pointer-events: none;
+  }
+
+  100% {
+    pointer-events: initial;
+    opacity: 1;
+  }
 }
 
-.playButton:focus {
-  outline: 0;
-  border: 1px solid purple;
+.exit::before,
+.exit::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 5px;
+  background: red;
+  transform: rotate(45deg);
+  transition: all 1s ease;
 }
 
-.playButton.blue {
-  background-color: cornflowerblue;
-  border: 1px solid purple;
+.exit::after {
+  transform: rotate(-45deg);
 }
 
-audio {
-  width: 200px;
+.hide {
+  display: none;
 }
