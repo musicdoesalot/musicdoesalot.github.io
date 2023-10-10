@@ -116,15 +116,14 @@ iframe {
   background: black;
   border-radius: 50%;
   border: 5px solid red;
-  animation: fadeInExit 11s ease-in 3s forwards;
-  animation-delay: 0s;
+  animation: fadeInExit 3s ease-in 0s forwards;
+  animation-delay: 9s;
   opacity: 0;
   pointer-events: none;
 }
 
 @keyframes fadeInExit {
   99% {
-
     pointer-events: none;
   }
 
