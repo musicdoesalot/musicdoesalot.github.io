@@ -59,7 +59,7 @@ const videoPlayer = (function makeVideoPlayer() {
             iv_load_policy: 3,
             //loop:1,
             listType: 'playlist',
-            list: 'PLlotB_y9MoPkF5OKfN4W2r_Ey0-HHBgmN'
+            list: 'PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki'
         };
         options.events = {
             "onReady": onPlayerReady
