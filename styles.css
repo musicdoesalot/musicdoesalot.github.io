@@ -103,7 +103,7 @@ iframe {
   }
 }
 
-.exit {
+a {
   position: absolute;
   top: auto;
   bottom: -47px;
@@ -133,8 +133,8 @@ iframe {
   }
 }
 
-.exit::before,
-.exit::after {
+a::before,
+a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -149,7 +149,7 @@ iframe {
   transition: all 1s ease;
 }
 
-.exit::after {
+a::after {
   transform: rotate(-45deg);
 }
 
