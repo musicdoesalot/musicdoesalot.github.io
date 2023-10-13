@@ -31,7 +31,7 @@ function onYouTubeIframeAPIReady() {
             fs: 0,
             iv_load_policy: 3,
             listType: 'playlist',
-            list: 'PLhBgTdAWkxeCMHYCQ0uuLyhydRJGDRNo5'
+            list: 'PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki'
         },
         events: {
             'onReady': onPlayerReady
