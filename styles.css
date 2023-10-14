@@ -9,7 +9,7 @@ body {
   background: #379DEB;
 }
 
-.container {
+A .container {
   position: absolute;
   left: 0;
   right: 0;
@@ -27,6 +27,8 @@ body {
 .ratio-keeper {
   height: 0;
   padding-top: 56.25%;
+  overflow: hidden;
+  position: relative;
 }
 
 .video-frame {
@@ -37,29 +39,44 @@ body {
   height: 100%;
 }
 
-
 iframe {
   user-select: none;
 }
 
-.fadeBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  animation: fadeOut 2s ease-in 700ms forwards;
-  animation-delay: 2s;
+:root {
+  --curtain-duration: 8s;
+  --curtain-delay: 2s;
 }
 
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
+.panel {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  background: #B76BF0;
+
+}
+
+.container .panel {
+  transform: translateY(0%);
+  animation: curtainUp var(--curtain-duration) ease-in forwards var(--curtain-delay);
+}
+
+@keyframes curtainUp {
+  to {
+    transform: translateY(calc(-100% - 1px));
   }
-  100% {
-    opacity: 0;
-    pointer-events: none;
+}
+
+.fadingOut .panel {
+  animation: curtainDown var(--curtain-duration) ease-in forwards var(--curtain-delay);
+  transform: translateY(calc(-100% - 1px));
+  animation-delay: 3.3s;
+}
+
+@keyframes curtainDown {
+  to {
+    transform: translateY(0%);
   }
 }
 
@@ -72,10 +89,12 @@ a {
   left: 0;
   width: 37px;
   height: 37px;
-  cursor: pointer;
   background: black;
   border-radius: 50%;
   border: 5px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   animation: fadeInExit 3s ease-in 0s forwards;
   animation-delay: 9s;
   opacity: 0;
@@ -97,22 +116,12 @@ a::before,
 a::after {
   content: "";
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
   width: 100%;
   height: 5px;
   background: red;
   transform: rotate(45deg);
-  transition: all 1s ease;
 }
 
 a::after {
   transform: rotate(-45deg);
-}
-
-.hide {
-  display: none;
 }
