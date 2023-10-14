@@ -11,7 +11,6 @@ function onPlayerReady(event) {
     shufflePlaylist(player);
 }
 
-// Shuffle the playlist
 function shufflePlaylist(player) {
     player.setShuffle(true);
     player.playVideoAt(0);
