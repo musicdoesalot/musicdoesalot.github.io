@@ -1,39 +1,23 @@
-const tag = document.createElement('script');
-tag.src = 'https://www.youtube.com/iframe_api';
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+const buttons = document.querySelectorAll(".playButton");
+const audios = document.querySelectorAll("audio");
 
-let player;
-
-function onPlayerReady(event) {
-    player = event.target;
-    player.setVolume(100);
-    shufflePlaylist(player);
-}
-
-function shufflePlaylist(player) {
-    player.setShuffle(true);
-    player.playVideoAt(0);
-    player.stopVideo();
-}
-
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('ytplayer', {
-        height: '361',
-        host: 'https://www.youtube-nocookie.com',
-        width: '642',
-        playerVars: {
-            autoplay: 0,
-            cc_load_policy: 0,
-            controls: 0,
-            disablekb: 1,
-            fs: 0,
-            iv_load_policy: 3,
-            listType: 'playlist',
-            list: 'PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki'
-        },
-        events: {
-            'onReady': onPlayerReady
+function playButton(button, buttonIndex) {
+    button.addEventListener("click", function () {
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("blue");
+        }
+        for (let i = 0; i < audios.length; i++) {
+            if (buttonIndex !== i || audios[i].currentTime > 0) {
+                audios[i].src = "";
+            } else {
+                button.classList.add("blue");
+                audios[i].src = button.dataset.src;
+                audios[i].play();
+            }
         }
     });
+}
+
+for (let i = 0; i < buttons.length; i++) {
+    playButton(buttons[i], i);
 }
