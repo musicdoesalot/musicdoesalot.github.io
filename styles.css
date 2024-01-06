@@ -6,70 +6,59 @@ body {
 }
 
 body {
-  background: #379DEB;
+  background: #353198;
 }
 
-.container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  min-height: 100%;
+.playButtonContainer {
   display: flex;
-}
-
-.video-wrapper {
-  flex: 1 0 0;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* added*/
+  min-height: 100%;
   margin: auto;
-  max-width: 642px;
-  position: relative;
+  justify-content: center;
+  align-content: center;
 }
 
-.ratio-keeper {
-  height: 0;
-  padding-top: 56.25%;
-  overflow: hidden;
-  position: relative;
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-around;
+  max-width: 398px;
+  gap: 10px;
+  /*background: red;*/
 }
 
-.video-frame {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.playButton {
+  flex-basis: 126px;
+  /* width of each button */
+  margin: 0px;
+  /* spacing between buttons */
+  padding: 1px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid black;
 }
 
-iframe {
-  user-select: none;
+.playButton:hover {
+  background-color: pink;
+  border: 1px solid black;
 }
 
-.panel {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  background: #379DEB;
+.playButton:focus {
+  outline: 0;
+  border: 1px solid black;
 }
 
-.container .panel {
-  transform: translateY(0%);
-  animation: curtainUp 8s ease-in forwards;
-  animation-delay: 3s;
-}
-
-@keyframes curtainUp {
-  to {
-    transform: translateY(calc(-100% - 1px));
-  }
+.playButton.blue {
+  background-color: pink;
+  border: 1px solid black;
 }
 
 a {
-  position: absolute;
-  top: auto;
-  bottom: -47px;
-  margin: auto;
-  right: 0;
-  left: 0;
+  position: relative;
+  margin: 10px auto 0;
   width: 37px;
   height: 37px;
   background: black;
@@ -79,7 +68,6 @@ a {
   align-items: center;
   justify-content: center;
   animation: fadeInExit 3s ease-in 0s forwards;
-  animation-delay: 13s;
   opacity: 0;
   pointer-events: none;
 }
