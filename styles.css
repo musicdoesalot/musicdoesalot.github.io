@@ -59,7 +59,7 @@ body:has(.modal.active) {
   overflow: auto;
   /* Enable scroll if needed */
   margin: auto;
-  background: green;
+  background: #353198;
 
 }
 
