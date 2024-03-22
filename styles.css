@@ -250,7 +250,6 @@ body:has(.modal.active) {
   flex-direction: column;
   margin-top: auto;*/
   margin: auto;
-
 }
 
 .containerB.hide {
@@ -340,6 +339,18 @@ body:has(.modal.active) {
   margin: auto;
 }
 
+.btn:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
+.btn:focus {
+  color: #fff;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  /*box-shadow: 0 0 0 2px rgb(255 0 0 / 100%)*/
+}
+
 .btn-primaryB {
   color: #2fdcfe;
   background-color: #000000;
@@ -367,17 +378,19 @@ body:has(.modal.active) {
   font-style: normal;
 }
 
-.btn:hover {
+.btnB:hover {
   background-color: #0056b3;
   color: #ffffff;
 }
 
-.btn:focus {
+.btnB:focus {
   color: #fff;
   background-color: #0b5ed7;
   border-color: #0a58ca;
   box-shadow: 0 0 0 2px rgb(255 0 0 / 100%)
 }
+
+
 
 .exitB {
   position: relative;
@@ -416,7 +429,7 @@ body:has(.modal.active) {
   right: 0;
   bottom: 0;
   display: flex;
-  background: rgba(0, 0, 0, 0.4);
+  /*background: rgba(0, 0, 0, 0.4);*/
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   transform: translate(0, -25%);
   opacity: 0;
@@ -424,6 +437,16 @@ body:has(.modal.active) {
   z-index: -99;
   overflow: auto;
   border-radius: 50%;
+  --units: 8px;
+  --brick1: #222;
+  --brick2: #222;
+  --lines: #121212;
+  --gp-ln: 50%/calc(var(--units) * 10) calc(var(--units) * 5);
+  --gp-cn: 50%/calc(var(--units) * 5) calc(var(--units) * 5);
+  background:
+    repeating-conic-gradient(from 90deg at 95% 55%, var(--lines) 0% 25%, #fff0 0% 100%) var(--gp-cn),
+    repeating-linear-gradient(180deg, var(--lines) 0 5%, #fff0 0 50%, var(--lines) 0 55%, var(--brick2) 0 100%) var(--gp-ln),
+    repeating-linear-gradient(90deg, var(--brick1) 0 47.5%, var(--lines) 0 50%, var(--brick1) 0 97.5%, var(--lines) 0 100%) var(--gp-ln);
 }
 
 .modal.active {
@@ -553,7 +576,6 @@ body:has(.modal.active) {
   transform: rotate(-45deg);
 }
 
-
 .containerC {
   /*display: flex;
   flex-wrap: wrap;
@@ -584,11 +606,8 @@ body:has(.modal.active) {
   /* width of each button */
   margin: 0;
   /* spacing between buttons */
-
   cursor: pointer;
-
 }
-
 
 .exitC {
   position: relative;
