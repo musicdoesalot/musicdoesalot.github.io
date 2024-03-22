@@ -60,7 +60,6 @@ body:has(.modal.active) {
   /* Enable scroll if needed */
   margin: auto;
   background: #353198;
-
 }
 
 .containerA.hide {
