@@ -24,7 +24,6 @@ body:has(.modalB.active) {
     opacity: 1;
 }
 
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
