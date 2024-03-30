@@ -8,21 +8,21 @@
     <link rel="icon" type="image/png" sizes="16x16" href="https://i.ibb.co/2d9593g/fav.png">
     <link rel="stylesheet" type="text/css" href="styles.css" media="screen">
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@400;500&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Poppins:wght@500&display=swap");
     </style>
   </head>
   <body>
     <div class="containerA">
-      <div class="video-containerA">
+      <div class="video-container">
         <button class="exitA exit" type="button" title="Exit" aria-label="Close"></button>
         <div class="ratio-keeper">
           <div class="video-one"></div>
-          <div class="wrap">
+          <div class="wrapA">
             <div class="video playInitial"></div>
           </div>
-          <div class="curtain-leftA">
+          <div class="curtain-left">
           </div>
-          <div class="curtain-rightA">
+          <div class="curtain-right">
           </div>
         </div>
         <div class="playInitial"></div>
@@ -30,227 +30,246 @@
     </div>
     <div class="outer-container hide">
       <div class="containerB">
-        <div class="modal-content">
-          <div class="buttonContainerA">
-            <button data-destination="#ba" class="playButtonA btn-primary btn">Listening</button>
-            <button data-destination="#bb" class="playButtonA btn-primary btn">Live Performance</button>
-            <button data-destination="#bc" class="playButtonA btn-primary btn">On Loop</button>
-            <button data-destination="#bd" class="playButtonA btn-primary btn">Audio Visual</button>
-            <button data-destination="#be" class="playButtonA btn-primary btn">Lyric Video</button>
-            <button data-destination="#bf" class="playButtonA btn-primary btn">Music Video</button>
-            <button data-destination="#bg" class="playButtonA btn-primary btn">From The Vault</button>
-            <button data-destination="#bh" class="playButtonA btnq">
-              <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" viewBox="0 0 856 856">
-                <path fill="#000" d="M 856 0 H 856 V 856 H 0 L 0 0 H 856" />
-                <path fill="#1155cc" d="M79.4,816.3c-21,0-38-17-38-37.9c0-21.1,16.9-38.1,38-38.1c20.9,0,37.9,17,37.9,38.1
-                  C117.3,799.3,100.4,816.3,79.4,816.3" />
-                <path fill="#1155cc" d="M79.4,115.7c-21,0-38-17-38-38s16.9-38,38-38c20.9,0,37.9,17,37.9,38S100.4,115.7,79.4,115.7" />
-                <path fill="#1155cc" d="M513.6,766.6c0,0.8-0.8,1.5-1.6,1.5H344.2c-0.8,0-1.5-0.7-1.5-1.5V658.2c0-0.9,0.7-1.7,1.5-1.7H512
-                  c0.8,0,1.6,0.7,1.6,1.7V766.6z" />
-                <path fill="#1155cc" d="M722,403.4c0,0.4-0.2,0.7-0.4,1.1l-75.2,76.4c-0.4,0.3-0.8,0.4-1.2,0.4H532.1l-18.5,18.5v96.9
-                  c0,1-0.8,1.7-1.6,1.7H344.2c-0.8,0-1.5-0.7-1.5-1.7V447.9c0-0.4,0.1-0.8,0.4-1.1l75.1-76.4c0.3-0.3,0.7-0.5,1.1-0.5h113.2
-                  l18.6-18.6V239.7l-18.6-18.6H323.6l-18.5,18.6v113.5c0,0.8-0.7,1.5-1.5,1.5H135.8c-1,0-1.6-0.7-1.6-1.5V190.8c0-0.3,0.2-0.7,0.4-1
-                  l77.1-79.6c0.3-0.3,0.7-0.4,1.2-0.4h430.5c0.4,0,0.8,0.2,1.2,0.4l76.9,79.6c0.2,0.2,0.4,0.7,0.4,1V403.4z" />
-                <path fill="#1155cc" d="M776.9,816.3c-20.9,0-38.2-17-38.2-37.9c0-21.1,17.2-38.1,38.2-38.1c20.9,0,38,17,38,38.1
-                  C814.9,799.3,797.8,816.3,776.9,816.3" />
-                <path fill="#1155cc" d="M776.9,115.7c-20.9,0-38.2-17-38-38s17.2-38,38.2-38c20.9,0,38,17,38,38S797.8,115.7,776.9,115.7" />
-              </svg>
-            </button>
-            <button data-destination="#bi" class="playButtonA btn-primary btn">Cover</button>
-            <button data-destination="#bj" class="playButtonA btn-primary btn">Remix</button>
-            <button data-destination="#bk" class="playButtonA btn-primary btn">Instrumental</button>
-            <button data-destination="#bl" class="playButtonA btn-primary btn">Extended Mix</button>
-            <button data-destination="#bm" class="playButtonA btn-primary btn">Duet</button>
-            <button data-destination="#bn" class="playButtonA btn-primary btn">Acoustic</button>
-            <button data-destination="#bo" class="playButtonA btn-primary btn">Rework</button>
-          </div>
+        <div class="modal-contentA">
+          <button data-destination="#ba" class="playButtonA btnA-primary btnA">Listening</button>
+          <button data-destination="#bb" class="playButtonA btnA-primary btnA">Live Performance</button>
+          <button data-destination="#bc" class="playButtonA btnA-primary btnA">On Loop</button>
+          <button data-destination="#bd" class="playButtonA btnA-primary btnA">Audio Visual</button>
+          <button data-destination="#be" class="playButtonA btnA-primary btnA">Lyric Video</button>
+          <button data-destination="#bf" class="playButtonA btnA-primary btnA">Music Video</button>
+          <button data-destination="#bg" class="playButtonA btnA-primary btnA">From The Vault</button>
+          <button data-destination="#bh" class="playButtonA btnA-primary btnA">Mystery Box</button>
+          <button data-destination="#bi" class="playButtonA btnA-primary btnA">Cover</button>
+          <button data-destination="#bj" class="playButtonA btnA-primary btnA">Remix</button>
+          <button data-destination="#bk" class="playButtonA btnA-primary btnA">Instrumental</button>
+          <button data-destination="#bl" class="playButtonA btnA-primary btnA">Extended Mix</button>
+          <button data-destination="#bm" class="playButtonA btnA-primary btnA">Duet</button>
+          <button data-destination="#bn" class="playButtonA btnA-primary btnA">Acoustic</button>
+          <button data-destination="#bo" class="playButtonA btnA-primary btnA">Rework</button>
+        </div>
+        <div class="modal-footer">
           <button class="exitB exit" type="button" title="Exit" aria-label="Close"></button>
         </div>
-        <div id="ba" class="modal">
-          <div class="inner-modal">
+        <div id="ba" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonA"></div>
               </div>
               <div class="buttonA"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA exit">&times</button>
           </div>
         </div>
-        <div id="bb" class="modal">
-          <div class="inner-modal">
+        <div id="bb" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonB"></div>
               </div>
               <div class="buttonB"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bc" class="modal">
-          <div class="inner-modal">
+        <div id="bc" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonC"></div>
               </div>
               <div class="buttonC"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bd" class="modal">
-          <div class="inner-modal">
+        <div id="bd" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonD"></div>
               </div>
               <div class="buttonD"></div>
-              <div class="curtainB"> </div>
+              <div class="curtain"> </div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="be" class="modal">
-          <div class="inner-modal">
+        <div id="be" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonE"></div>
               </div>
               <div class="buttonE">
               </div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bf" class="modal">
-          <div class="inner-modal">
+        <div id="bf" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonF"></div>
               </div>
               <div class="buttonF"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bg" class="modal">
-          <div class="inner-modal">
+        <div id="bg" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonG"></div>
               </div>
               <div class="buttonG"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bh" class="modal">
-          <div class="inner-modal">
+        <div id="bh" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonH"></div>
               </div>
               <div class="buttonH"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bi" class="modal">
-          <div class="inner-modal">
+        <div id="bi" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonI"></div>
               </div>
               <div class="buttonI"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bj" class="modal">
-          <div class="inner-modal">
+        <div id="bj" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonJ"></div>
               </div>
               <div class="buttonJ"></div>
-              <div class="curtainB"> </div>
+              <div class="curtain"> </div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bk" class="modal">
-          <div class="inner-modal">
+        <div id="bk" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonK"></div>
               </div>
               <div class="buttonK"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bl" class="modal">
-          <div class="inner-modal">
+        <div id="bl" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonL"></div>
               </div>
               <div class="buttonL"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bm" class="modal">
-          <div class="inner-modal">
+        <div id="bm" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonM"></div>
               </div>
               <div class="buttonM"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bn" class="modal">
-          <div class="inner-modal">
+        <div id="bn" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonN"></div>
               </div>
               <div class="buttonN"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
-        <div id="bo" class="modal">
-          <div class="inner-modal">
+        <div id="bo" class="modalA">
+          <div class="inner-modalA">
             <div class="ratio-keeper">
               <div class="wrapB">
                 <div class="video buttonO"></div>
               </div>
               <div class="buttonO"></div>
-              <div class="curtainB"></div>
+              <div class="curtain"></div>
             </div>
-            <button class="close exit">&times</button>
+            <button class="closeA">&times</button>
           </div>
         </div>
       </div>
       <div class="containerC hide">
-        <div class="buttonContainerB"></div>
-        <button class="exitC exit" type="button" title="Exit" aria-label="Close"></button>
+        <div class="buttonContainerB">
+        </div>
+        <div class="modal-footer">
+          <button class="exitC" type="button" title="Exit" aria-label="Close"></button>
+        </div>
+        <div id="lb" class="modalB">
+          <div class="inner-modalB">
+            <div class="buttonContainerC">
+              <a href="https://onlineradiobox.com/gr/heat/playlist/" class="linkButton btnD-primary btnD" target="_blank">heat radio</a>
+              <a href="https://onlineradiobox.com/gr/heatclassic/playlist/" class="linkButton btnD-primary btnD" target="_blank">heat classic</a>
+              <a href="https://www.radiobells.com/deephouse/svoefm/" class="linkButton btnD-primary btnD" target="_blank">СВОЕ FM</a>
+              <a href="https://www.radiobells.com/deephouse/relaxclubmusic/" class="linkButton btnD-primary btnD" target="_blank">Relax Club Music</a>
+              <a href="https://www.radiobells.com/deephouse/soundparkdeep/" class="linkButton btnD-primary btnD" target="_blank">Sound Park #Deep</a>
+              <a href="https://top-radio.ru/playlist/soundpark-classic" class="linkButton btnD-primary btnD" target="_blank">Sound Park Classic</a>
+              <a href="https://www.radiobells.com/deephouse/delishdeep/" class="linkButton btnD-primary btnD" target="_blank">Delish Deep</a>
+              <a href="https://www.radiobells.com/deephouse/bestdeepfm/" class="linkButton btnD-primary btnD" target="_blank">BEST DEEP FM</a>
+              <a href="https://onlineradiobox.com/gr/musicfactory/playlist/" class="linkButton btnD-primary btnD" target="_blank">Music Factory</a>
+              <a href="https://www.radiobells.com/deephouse/mdeep/" class="linkButton btnD-primary btnD" target="_blank">M.Deep Radio</a>
+              <a href="https://onlineradiobox.com/gr/fly104/playlist/" class="linkButton btnD-primary btnD" target="_blank">Fly 104</a>
+              <a href="https://www.radiobells.com/deephouse/luxurymusic/" class="linkButton btnD-primary btnD" target="_blank">Luxury Music</a>
+              <a href="https://www.radiobells.com/playlist/nueuphoria/" class="linkButton btnD-primary btnD" target="_blank">Nu Euphoria</a>
+              <a href="https://onlineradiobox.com/gr/cavoparadiso/playlist/" class="linkButton btnD-primary btnD" target="_blank">Cavo Paradiso</a>
+              <a href="https://onlineradiobox.com/ch/1fmamsterdamtranceradio/playlist/" class="linkButton btnD-primary btnD" target="_blank">Amsterdam Trance</a>
+              <a href="https://onlineradiobox.com/kz/diskoteka90/playlist/" class="linkButton btnD-primary btnD" target="_blank">90s Eurodance</a>
+              <a href="https://www.radiobells.com/deephouse/uralsound/" class="linkButton btnD-primary btnD" target="_blank">URALSOUND FM</a>
+              <a href="https://onlineradiobox.com/gr/athensup/playlist/" class="linkButton btnD-primary btnD" target="_blank">Athens Up Radio</a>
+              <a href="https://nightride.fm/stations?station=nightride" class="linkButton btnD-primary btnD" target="_blank">Nightride FM</a>
+              <a href="https://www.radiobells.com/club/retrowaveoneradio/" class="linkButton btnD-primary btnD" target="_blank">RetroWave.One</a>
+              <a href="https://www.synthwaveradio.eu/" class="linkButton btnD-primary btnD" target="_blank">Synthwave Radio</a>
+              <a href="https://onlineradiobox.com/nl/synthwavecity/playlist/" class="linkButton btnD-primary btnD" target="_blank">Synthwave City FM</a>
+              <a href="https://onlineradiobox.com/gr/rockmelodic/playlist/" class="linkButton btnD-primary btnD" target="_blank">Rock Melodic Radio</a>
+            </div>
+            <div class="modal-footer">
+              <button class="closeB">&times</button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="containerD hide">
         <div class="inner-container ">
@@ -277,31 +296,29 @@
               </svg>
             </div>
             <div class="orange-margin">
-              <h1 class="title-text">Some Text</h1>
+              <h1 class="title-text">some text</h1>
             </div>
             <div class="yellow-padding-margin">
-              <h2 class="center-text">Some Text.</h2>
+              <h2 class="center-text">[ some text ]</h2>
             </div>
           </div>
-          <div class="margin-top">
-            <footer class="my-footer">
-              <div class="footer-top">
-                <a href=" #" target="_blank">something</a>
-                <b>
-                  <!--|-->
-                </b>
-                <a href="#" target="_blank">something</a>
-                <b>
-                  <!--|-->
-                </b>
-                <a href="#"
-                  target="_blank"><span class="green-text">something</span><span class="brown-text">something</span></a><b></b>
-                <a href="#" target="_blank">Feedback</a>
-              </div>
-              <div class="footer-mid">something</div>
-              <div class="footer-base">something</div>
-            </footer>
-          </div>
+          <button class="exitD" type="button" title="Exit" aria-label="Close"></button>
+          <footer class="margin-top my-footer">
+            <div class="footer-top">
+              <a href=" #" target="_blank">some text</a>
+              <b>
+                <!--|-->
+              </b>
+              <a href="#" target="_blank">some text</a>
+              <b>
+                <!--|-->
+              </b>
+              <a href="#" target="_blank"><span class="green-text">some text</span><span class="orange-text">some text</span></a><b></b>
+              <a href="#" target="_blank">some text</a>
+            </div>
+            <div class="footer-mid">some text</div>
+            <div class="footer-base">some text</div>
+          </footer>
         </div>
       </div>
     </div>
