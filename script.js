@@ -2,9 +2,9 @@
 /*jslint browser:true */
 /*jslint devel: true */
 window.onload = function () {
-    const container = document.querySelector(".video-containerA");
+    const container = document.querySelector(".video-container");
     container.classList.add("slide");
-    const wrapper = document.querySelector(".wrap");
+    const wrapper = document.querySelector(".wrapA");
     wrapper.classList.add("visible");
 };
 
@@ -28,10 +28,6 @@ const videoPlayer = (function makeVideoPlayer() {
         shufflePlaylist(player, isShuffle);
     }
 
-    function onPlayerStateChange(event) {
-        const player = event.target;
-    }
-
     function addPlayer(video, playerOptions) {
         let id = video.dataset.id;
         playerOptions.playerVars = playerOptions.playerVars || {};
@@ -52,7 +48,7 @@ const videoPlayer = (function makeVideoPlayer() {
         video.dataset.shuffle = playerOptions.shuffle;
         playerOptions.events = playerOptions.events || {};
         playerOptions.events.onReady = onPlayerReady;
-        playerOptions.events.onStateChange = onPlayerStateChange;
+        //playerOptions.events.onStateChange = onPlayerStateChange;
         players.push(new YT.Player(video, playerOptions));
     }
 
@@ -163,14 +159,14 @@ function onYouTubeIframeAPIReady() {
     function exitClickHandler() {
         resetPage();
     }
-    const closeModal = document.querySelector(".exitA");
-    closeModal.addEventListener("click", exitClickHandler);
+    const exit = document.querySelector(".exitA");
+    exit.addEventListener("click", exitClickHandler);
 }());
 (function manageOpenModel() {
     function openModal(target) {
         const modal = document.querySelector(target);
         modal.classList.add("active");
-        modal.querySelector(".curtainB").classList.add("slide");
+        modal.querySelector(".curtain").classList.add("slide");
         modal.querySelector(".wrapB").classList.add("visible");
     }
 
@@ -178,6 +174,10 @@ function onYouTubeIframeAPIReady() {
         const modalButtons = document.querySelectorAll(".playButtonA");
         modalButtons.forEach(function (button, index) {
             button.addEventListener("click", function (event) {
+                modalButtons.forEach(function (markAsPlayed) {
+                    markAsPlayed.classList.remove("played");
+                });
+                button.classList.add("played");
                 //const target = event.currentTarget.dataset.destination;
                 //openModal(target);
                 openModal(event.currentTarget.dataset.destination);
@@ -256,24 +256,24 @@ function onYouTubeIframeAPIReady() {
 
     function closeModal(modal) {
         modal.classList.remove("active");
-        modal.querySelector(".curtainB").classList.add("hide");
+        modal.querySelector(".curtain").classList.add("hide");
         modal.querySelector(".wrapB").classList.remove("visible");
         removePlayer();
     }
 
     function addCloseEventToModals() {
-        const closeModals = document.querySelectorAll(".close");
+        const closeModals = document.querySelectorAll(".closeA");
         closeModals.forEach(function (modal) {
             modal.addEventListener("click", function (event) {
                 //const currentModal = event.target.closest(".modal");
                 //closeModal(currentModal);
-                closeModal(event.target.closest(".modal"));
+                closeModal(event.target.closest(".modalA"));
             });
         });
     }
     addCloseEventToModals();
 }());
-(function managePageC() {
+(function managePageB() {
 
     function hideContainer(containerSelector) {
         const container = document.querySelector(containerSelector);
@@ -293,11 +293,15 @@ function onYouTubeIframeAPIReady() {
     function exitClickHandler() {
         resetPage();
 
+        const buttons = document.querySelectorAll(".playButtonA");
+        buttons.forEach(function (button) {
+            button.classList.remove("played");
+        });
     }
-    const closeModal = document.querySelector(".exitB");
-    closeModal.addEventListener("click", exitClickHandler);
-}());
 
+    const exit = document.querySelector(".exitB");
+    exit.addEventListener("click", exitClickHandler);
+}());
 
 (function manageRadios() {
 
@@ -353,8 +357,9 @@ function onYouTubeIframeAPIReady() {
         src: "https://myradio24.org/5967",
         title: "90s Eurodance"
     }, {
-        src: "https://best.live24.gr/best1222",
-        title: "Best Radio 92.6"
+        src: "https://www.liveradio.es/" +
+        "http://62.16.40.250:8000/uralsoundfm",
+        title: "URALSOUND FM"
     }, {
         src: "https://stream.radiojar.com/9ndpdg3c0s8uv",
         title: "Athens Up Radio"
@@ -363,7 +368,7 @@ function onYouTubeIframeAPIReady() {
         title: "Nightride FM"
     }, {
         src: "https://waveretro.ru:8443/stream",
-        title: "RetroWave One"
+        title: "RetroWave.One"
     }, {
         src: "https://stream.synthwaveradio.eu/listen/" +
         "synthwaveradio.eu/radio.mp3",
@@ -375,15 +380,14 @@ function onYouTubeIframeAPIReady() {
         src: "https://i4.streams.ovh:2200/ssl/rockmelo?mp=/stream",
         title: "Rock Melodic Radio"
     }, {
-        href: "https://www.example.com",
+        buttonClass: "linkButton btnD-primary btnD",
         title: "Last Song Played"
-    }
-    // Add more stations here...
-];
-    // Get the container for the buttons
+    }];
     const buttonContainer = document.querySelector(".buttonContainerB");
+
     // Create audio and button elements for each station
     radioStations.forEach(function (station) {
+        let button;
         if (station.src) {
             // Create audio element
             const audio = document.createElement("audio");
@@ -400,31 +404,40 @@ function onYouTubeIframeAPIReady() {
             document.body.appendChild(audio);
 
             // Create button element
-            const button = document.createElement("button");
-            button.classList.add("playButtonB", "btn", "btn-primary");
+            button = document.createElement("button");
+            button.classList.add("playButtonB", "btnB-primary", "btnB");
             button.dataset.src = station.src;
             button.textContent = station.title;
 
             // Add button to the container
             buttonContainer.appendChild(button);
-        } else if (station.href) {
-            // Create anchor element
-            const anchor = document.createElement("a");
-            anchor.href = station.href;
-            anchor.textContent = station.title;
-            anchor.target = "_blank"; // Open in new tab
-            anchor.classList.add("playButtonB", "btn-primaryB", "btnB");
-            // Add anchor to the container
-            buttonContainer.appendChild(anchor);
+        } else if (station.buttonClass) {
+            button = document.createElement("button");
+            button.className = station.buttonClass;
+            button.textContent = station.title;
+            button.classList.add("linkButton", "btnC-primary", "btnC");
+            button.setAttribute("data-destination", "#lb"); // Added this line
+            buttonContainer.appendChild(button);
         }
     });
 
-    // Your existing JavaScript code
     const buttons = document.querySelectorAll(".playButtonB");
     const audios = document.querySelectorAll("audio");
 
     buttons.forEach(function (button, index) {
         button.addEventListener("click", function () {
+            // If the button already has 'played' class, remove it
+            if (button.classList.contains("played")) {
+                button.classList.remove("played");
+            } else {
+                // Remove 'played' class from all buttons
+                buttons.forEach(function (markAsPlayed) {
+                    markAsPlayed.classList.remove("played");
+                });
+                // Add 'played' class to the clicked button
+                button.classList.add("played");
+            }
+
             audios.forEach(function (audio, i) {
                 if (index === i && audio.currentTime === 0) {
                     audio.src = button.dataset.src;
@@ -435,11 +448,46 @@ function onYouTubeIframeAPIReady() {
             });
         });
     });
+}());
+(function manageLinkButtonOpen() {
+
+    function openModal(target) {
+        const modal = document.querySelector(target);
+        modal.classList.add("active");
+    }
+
+    function addLinkToButton() {
+        const modalButton = document.querySelector(".linkButton");
+        modalButton.addEventListener("click", function (event) {
+            //const target = event.currentTarget.dataset.destination;
+            //openModal(target);
+            openModal(event.currentTarget.dataset.destination);
+        });
+    }
+    addLinkToButton();
 
 }());
 
+(function manageLinkButtonClose() {
 
-(function managePageD() {
+    function closeModal(modal) {
+        modal.classList.remove("active");
+    }
+
+    function addCloseEventToModal() {
+        const closeModals = document.querySelectorAll(".modalB");
+
+        closeModals.forEach(function (modal) {
+            modal.addEventListener("click", function () {
+                //closeModal(event.target.closest(".modalB"));
+                closeModal(document.querySelector(".modalB"));
+            });
+        });
+    }
+    addCloseEventToModal();
+}());
+
+(function managePageC() {
 
     function hideContainer(containerSelector) {
         const container = document.querySelector(containerSelector);
@@ -454,12 +502,45 @@ function onYouTubeIframeAPIReady() {
     function resetPage() {
         hideContainer(".containerC");
         showContainer(".containerD");
+        window.scrollTo(0, 0);
+    }
+
+    function exitClickHandler() {
+        const buttons = document.querySelectorAll(".playButtonB");
+        const audios = document.querySelectorAll("audio");
+
+        audios.forEach(function (audio) {
+            audio.src = "";
+        });
+        buttons.forEach(function (button) {
+            button.classList.remove("played");
+        });
+
+        resetPage();
+    }
+    const exit = document.querySelector(".exitC");
+    exit.addEventListener("click", exitClickHandler);
+}());
+
+(function managePageD() {
+    function hideContainer(containerSelector) {
+        const container = document.querySelector(containerSelector);
+        container.classList.add("hide");
+    }
+
+    function showContainer(containerSelector) {
+        const container = document.querySelector(containerSelector);
+        container.classList.remove("hide");
+    }
+
+    function resetPage() {
+        hideContainer(".containerD");
+        showContainer(".containerB");
     }
 
     function exitClickHandler() {
         resetPage();
-
     }
-    const closeModal = document.querySelector(".exitC");
-    closeModal.addEventListener("click", exitClickHandler);
+    const exit = document.querySelector(".exitD");
+    exit.addEventListener("click", exitClickHandler);
 }());
