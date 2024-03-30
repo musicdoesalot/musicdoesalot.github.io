@@ -631,5 +631,5 @@ body:has(.modalB.active) {
 
 .footer-base {
   color: #0059dd;
-  padding: 0 0 31px 0;
+  padding: 0;
 }
