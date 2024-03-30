@@ -131,7 +131,7 @@ const players = (function uiLoadPlayer() {
 function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playInitial", {
-        videoId: ["0dgNc5S8cLI", "mnfmQe8Mv1g", "AxLxnN6z0Og"]
+        videoId: ["_iOELSVXohc", "mnfmQe8Mv1g", "AxLxnN6z0Og"]
     });
 }
 
@@ -193,15 +193,15 @@ function onYouTubeIframeAPIReady() {
                     });
                 } else if (index === 2) {
                     players.add(".buttonC", {
-                        videoId: "CHahce95B1g"
+                        videoId: "5xUUqjLMpOw"
                     });
                 } else if (index === 3) {
                     players.add(".buttonD", {
-                        videoId: "CHahce95B1g"
+                        videoId: "Nbp8XZnzfT8"
                     });
                 } else if (index === 4) {
                     players.add(".buttonE", {
-                        videoId: "CHahce95B1g"
+                        videoId: "844Nx8ODOAg"
                     });
                 } else if (index === 5) {
                     players.add(".buttonF", {
@@ -209,11 +209,11 @@ function onYouTubeIframeAPIReady() {
                     });
                 } else if (index === 6) {
                     players.add(".buttonG", {
-                        videoId: "CHahce95B1g"
+                        videoId: "87vA2hx0je8"
                     });
                 } else if (index === 7) {
                     players.add(".buttonH", {
-                        videoId: "CHahce95B1g"
+                        videoId: "xvmRWHaeLqQ"
                     });
                 } else if (index === 8) {
                     players.add(".buttonI", {
@@ -221,15 +221,15 @@ function onYouTubeIframeAPIReady() {
                     });
                 } else if (index === 9) {
                     players.add(".buttonJ", {
-                        videoId: "CHahce95B1g"
+                        videoId: "Aqz9-0NEqS8"
                     });
                 } else if (index === 10) {
                     players.add(".buttonK", {
-                        videoId: "CHahce95B1g"
+                        videoId: "hciKsIzybGY"
                     });
                 } else if (index === 11) {
                     players.add(".buttonL", {
-                        videoId: "CHahce95B1g"
+                        videoId: "kLuqtneXB7Q"
                     });
                 } else if (index === 12) {
                     players.add(".buttonM", {
@@ -237,7 +237,7 @@ function onYouTubeIframeAPIReady() {
                     });
                 } else if (index === 13) {
                     players.add(".buttonN", {
-                        videoId: "CHahce95B1g"
+                        videoId: "SSdebtSqjEs"
                     });
                 } else if (index === 14) {
                     players.add(".buttonO", {
