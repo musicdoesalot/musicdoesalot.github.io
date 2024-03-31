@@ -404,7 +404,7 @@ button, a {
 .played {
   border-color: #0a58ca;
   background-color: #0056b3;
-  box-shadow: 0 0 0 2px rgb(255 0 0 / 100%);
+  box-shadow: 0 0 0 2px rgb(255 0 0);
 }
 
 .btnC-primary,
