@@ -578,7 +578,7 @@ button, a {
   text-decoration: none;
 }
 
-.my-footer hr {
+.my-footer b {
   position: relative;
   top: 4px;
   left: 0;
@@ -586,7 +586,6 @@ button, a {
   border: none;
   height: 12px;
   border-left: 1px solid #f6b26b;
-  /* Line color */
 }
 
 .footer-top {
