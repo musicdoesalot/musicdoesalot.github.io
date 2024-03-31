@@ -405,7 +405,7 @@ function onYouTubeIframeAPIReady() {
 
     // Create audio and button elements for each station
     radioStations.forEach(function (station) {
-        let button;
+        const button = document.createElement("button");
         if (station.src) {
             // Create audio element
             const audio = document.createElement("audio");
@@ -422,7 +422,6 @@ function onYouTubeIframeAPIReady() {
             document.body.appendChild(audio);
 
             // Create button element
-            button = document.createElement("button");
             button.classList.add("playButtonB", "btnB-primary", "btnB");
             button.dataset.src = station.src;
             button.textContent = station.title;
@@ -430,7 +429,6 @@ function onYouTubeIframeAPIReady() {
             // Add button to the container
             buttonContainer.appendChild(button);
         } else if (station.buttonClass) {
-            button = document.createElement("button");
             button.className = station.buttonClass;
             button.textContent = station.title;
             button.classList.add("linkButton", "btnC-primary", "btnC");
