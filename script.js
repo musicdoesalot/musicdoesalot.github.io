@@ -131,8 +131,8 @@ const players = (function uiLoadPlayer() {
 function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playInitial", {
-        videoId: ["_iOELSVXohc", "T42qMaYrhZQ",
-            "rDBbaGCCIhk", "sbQIEg9r2e4"
+        videoId: ["_iOELSVXohc", "74hE9e3yGrc", "AxLxnN6z0Og",
+        "rDBbaGCCIhk", "4bjFfQD98Nw", "sbQIEg9r2e4", "QXLBLwPhNYM" 
         ]
     });
 }
