@@ -419,6 +419,16 @@ button, a {
   border: 1px solid #2fdcfe;
 }
 
+.btnD:hover {
+    background-color: #121212;
+}
+
+.btnA:focus,
+.btnD:focus {
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(47, 254, 185);
+}
+
 .exitB,
 .exitC,
 .closeB {
