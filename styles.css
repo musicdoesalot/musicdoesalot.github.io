@@ -4,7 +4,6 @@ body {
   padding: 0;
 }
 
-
 body {
   background: #121212;
   padding: 0 8px 0;
@@ -579,14 +578,15 @@ button, a {
   text-decoration: none;
 }
 
-.my-footer b {
+.divider {
   position: relative;
   top: 4px;
   left: 0;
   margin: 0 7.4px;
-  border: none;
   height: 12px;
-  border-left: 1px solid #f6b26b;
+  width: 1px;
+  background: #f6b26b;
+  /* Line color */
 }
 
 .footer-top {
