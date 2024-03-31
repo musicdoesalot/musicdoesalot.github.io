@@ -1,6 +1,11 @@
 /*global YT */
 /*jslint browser:true */
 /*jslint devel: true */
+
+document.querySelector('.closeA').addEventListener('click', function() {
+    document.querySelector('.btnA').blur();
+});
+
 window.onload = function () {
     const container = document.querySelector(".video-container");
     container.classList.add("slide");
