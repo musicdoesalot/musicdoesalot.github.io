@@ -583,9 +583,9 @@ button, a {
   top: 4px;
   left: 0;
   margin: 0 7.4px;
-  width: 1px;
+  border: none;
   height: 12px;
-  background-color: #f6b26b;
+  border-left: 1px solid #f6b26b;
 }
 
 .footer-top {
