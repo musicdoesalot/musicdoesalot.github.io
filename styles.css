@@ -426,7 +426,7 @@ button, a {
 .btnA:focus,
 .btnD:focus {
   outline: 0;
-  box-shadow: 0 0 0 4px rgba(47 254 185 / 50%);
+  box-shadow: 0 0 0 4px rgba(47 254 185 / 100%);
 }
 
 .exitB,
