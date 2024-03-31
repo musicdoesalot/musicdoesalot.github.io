@@ -191,7 +191,7 @@ function onYouTubeIframeAPIReady() {
                 } else if (index === 1) {
                     //Live Performance
                     players.add(".buttonB", {
-                        videoId: "ZTQEJLNlM4U"
+                        videoId: "5xUUqjLMpOw"
                     });
                 } else if (index === 2) {
                     //On Loop
@@ -204,7 +204,7 @@ function onYouTubeIframeAPIReady() {
                 } else if (index === 3) {
                     //Audio Visual
                     players.add(".buttonD", {
-                        videoId: "7vxEV7ogJhY"
+                        videoId: "49ohUZeHjP8"
                     });
                 } else if (index === 4) {
                     //Lyric Video
