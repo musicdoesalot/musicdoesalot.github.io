@@ -491,7 +491,7 @@ function onYouTubeIframeAPIReady() {
     }
 
     function addCloseEventToModal() {
-        const closeModals = document.querySelectorAll(".modalB");
+        const closeModals = document.querySelectorAll(".closeB");
 
         closeModals.forEach(function (modal) {
             modal.addEventListener("click", function () {
