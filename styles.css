@@ -322,8 +322,6 @@ button, a {
   /* just in case*/
 }
 
-
-
 .exitA,
 .closeA {
   transform: translateY(100%);
@@ -399,6 +397,7 @@ button, a {
 .btnA:hover,
 .btnB:hover {
   background-color: #0056b3;
+  border-color: #0a58ca;
   color: #ffffff;
 }
 
