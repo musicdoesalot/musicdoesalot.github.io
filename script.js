@@ -131,7 +131,9 @@ const players = (function uiLoadPlayer() {
 function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playInitial", {
-        videoId: ["_iOELSVXohc", "mnfmQe8Mv1g", "AxLxnN6z0Og"]
+        videoId: ["_iOELSVXohc", "T42qMaYrhZQ",
+            "rDBbaGCCIhk", "sbQIEg9r2e4"
+        ]
     });
 }
 
@@ -182,66 +184,82 @@ function onYouTubeIframeAPIReady() {
                 //openModal(target);
                 openModal(event.currentTarget.dataset.destination);
                 if (index === 0) {
+                    //Listening
                     players.add(".buttonA", {
-                        list: "PLYeOyMz9C9kYmnPHfw5-ItOxYBiMG4amq",
-                        listType: "playlist",
-                        shuffle: true
+                        videoId: "yq5KBfbmark"
                     });
                 } else if (index === 1) {
+                    //Live Performance
                     players.add(".buttonB", {
-                        videoId: "CHahce95B1g"
+                        videoId: "ZTQEJLNlM4U"
                     });
                 } else if (index === 2) {
+                    //On Loop
                     players.add(".buttonC", {
-                        videoId: "5xUUqjLMpOw"
+                        playerVars: {
+                            loop: 1,
+                            playlist: "Nbp8XZnzfT8"
+                        }
                     });
                 } else if (index === 3) {
+                    //Audio Visual
                     players.add(".buttonD", {
-                        videoId: "Nbp8XZnzfT8"
+                        videoId: "7vxEV7ogJhY"
                     });
                 } else if (index === 4) {
+                    //Lyric Video
                     players.add(".buttonE", {
                         videoId: "844Nx8ODOAg"
                     });
                 } else if (index === 5) {
+                    //Music Video
                     players.add(".buttonF", {
-                        videoId: "CHahce95B1g"
+                        videoId: "D7lT8T0JNjc"
                     });
                 } else if (index === 6) {
+                    //From The Vault
                     players.add(".buttonG", {
                         videoId: "87vA2hx0je8"
                     });
                 } else if (index === 7) {
+                    //Mystery Box
                     players.add(".buttonH", {
-                        videoId: "xvmRWHaeLqQ"
+                        videoId: "hciKsIzybGY"
                     });
                 } else if (index === 8) {
+                    //Cover
                     players.add(".buttonI", {
-                        videoId: "CHahce95B1g"
+                        videoId: "ZfyR0skpsms"
                     });
                 } else if (index === 9) {
+                    //Remix
                     players.add(".buttonJ", {
                         videoId: "Aqz9-0NEqS8"
                     });
                 } else if (index === 10) {
+                    //Instrumental
                     players.add(".buttonK", {
-                        videoId: "hciKsIzybGY"
+                        videoId: "qYEooPeyz5M"
                     });
                 } else if (index === 11) {
+                    //Original Mix
                     players.add(".buttonL", {
-                        videoId: "kLuqtneXB7Q"
+                        videoId: "3MvgQXbWpQg"
                     });
+                    //Foreign
                 } else if (index === 12) {
                     players.add(".buttonM", {
-                        videoId: "CHahce95B1g"
+                        videoId: "-ZwsSieOPXU"
                     });
+                    //Acoustic
                 } else if (index === 13) {
                     players.add(".buttonN", {
                         videoId: "SSdebtSqjEs"
                     });
                 } else if (index === 14) {
+                    //Music of the soul...
                     players.add(".buttonO", {
-                        videoId: "CHahce95B1g"
+                        videoId: "C0Z99nrMAX0"
                     });
                 }
             });
