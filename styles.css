@@ -437,6 +437,9 @@ button, a {
   inset: 0 0 0 0;
   width: 47px;
   height: 47px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   background: black;
   border-radius: 50%;
   border: 5px solid red;
@@ -533,6 +536,9 @@ button, a {
   inset: 0 0 0 0;
   width: 47px;
   height: 47px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   background: black;
   border-radius: 50%;
   border: 5px solid #0059dd;
