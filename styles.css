@@ -578,22 +578,28 @@ button, a {
   text-decoration: none;
 }
 
-.divider {
+.divider:before,
+.divider:after {
+  content: "";
   position: relative;
   top: 4px;
-  left: 0;
   margin: 0 7.4px;
   height: 12px;
   width: 1px;
   background: #f6b26b;
-  /* Line color */
 }
 
 .footer-top {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 13px;
+  margin: 0 0 13px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-top li {
+  display: flex;
 }
 
 .footer-top a {
