@@ -132,7 +132,7 @@ function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playInitial", {
         videoId: ["_iOELSVXohc", "74hE9e3yGrc", "AxLxnN6z0Og",
-        "rDBbaGCCIhk", "4bjFfQD98Nw", "sbQIEg9r2e4", "QXLBLwPhNYM" 
+            "rDBbaGCCIhk", "4bjFfQD98Nw", "sbQIEg9r2e4", "QXLBLwPhNYM"
         ]
     });
 }
@@ -184,17 +184,17 @@ function onYouTubeIframeAPIReady() {
                 //openModal(target);
                 openModal(event.currentTarget.dataset.destination);
                 if (index === 0) {
-                    //Listening
+                    //#ba
                     players.add(".buttonA", {
                         videoId: "yq5KBfbmark"
                     });
                 } else if (index === 1) {
-                    //Live Performance
+                    //#bb
                     players.add(".buttonB", {
                         videoId: "5xUUqjLMpOw"
                     });
                 } else if (index === 2) {
-                    //On Loop
+                    //#bc
                     players.add(".buttonC", {
                         playerVars: {
                             loop: 1,
@@ -202,63 +202,89 @@ function onYouTubeIframeAPIReady() {
                         }
                     });
                 } else if (index === 3) {
-                    //Audio Visual
+                    //#bd
                     players.add(".buttonD", {
                         videoId: "49ohUZeHjP8"
                     });
                 } else if (index === 4) {
-                    //Lyric Video
+                    //be
                     players.add(".buttonE", {
                         videoId: "844Nx8ODOAg"
                     });
                 } else if (index === 5) {
-                    //Music Video
+                    //#bf
                     players.add(".buttonF", {
                         videoId: "D7lT8T0JNjc"
                     });
                 } else if (index === 6) {
-                    //From The Vault
+                    //#bg
                     players.add(".buttonG", {
                         videoId: "87vA2hx0je8"
                     });
                 } else if (index === 7) {
-                    //Mystery Box
+                    //#bh
                     players.add(".buttonH", {
                         videoId: "hciKsIzybGY"
                     });
                 } else if (index === 8) {
-                    //Cover
+                    //bi
                     players.add(".buttonI", {
                         videoId: "ZfyR0skpsms"
                     });
                 } else if (index === 9) {
-                    //Remix
+                    //bj
                     players.add(".buttonJ", {
                         videoId: "Aqz9-0NEqS8"
                     });
                 } else if (index === 10) {
-                    //Instrumental
+                    //#bk
                     players.add(".buttonK", {
                         videoId: "qYEooPeyz5M"
                     });
                 } else if (index === 11) {
-                    //Original Mix
+                    //#bl
                     players.add(".buttonL", {
                         videoId: "3MvgQXbWpQg"
                     });
-                    //Foreign
+                    //#bm
                 } else if (index === 12) {
                     players.add(".buttonM", {
                         videoId: "-ZwsSieOPXU"
                     });
-                    //Acoustic
+                    //#bn
                 } else if (index === 13) {
                     players.add(".buttonN", {
                         videoId: "SSdebtSqjEs"
                     });
                 } else if (index === 14) {
-                    //Music of the soul...
+                    //#bo
                     players.add(".buttonO", {
+                        videoId: "C0Z99nrMAX0"
+                    });
+                } else if (index === 15) {
+                    //#bp
+                    players.add(".buttonP", {
+                        videoId: "C0Z99nrMAX0"
+                    });
+
+                } else if (index === 16) {
+                    //#bq
+                    players.add(".buttonQ", {
+                        videoId: "C0Z99nrMAX0"
+                    });
+                } else if (index === 17) {
+                    //#br
+                    players.add(".buttonR", {
+                        videoId: "C0Z99nrMAX0"
+                    });
+                } else if (index === 18) {
+                    //#bs
+                    players.add(".buttonS", {
+                        videoId: "C0Z99nrMAX0"
+                    });
+                } else if (index === 19) {
+                    //#bt
+                    players.add(".buttonT", {
                         videoId: "C0Z99nrMAX0"
                     });
                 }
@@ -322,7 +348,7 @@ function onYouTubeIframeAPIReady() {
 }());
 
 (function manageRadios() {
-
+    
     // Define your radio stations
     const radioStations = [{
         src: "https://solid67.streamupsolutions.com/proxy/" +
