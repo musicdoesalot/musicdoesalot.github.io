@@ -14,8 +14,9 @@ body:has(.modalB.active) {
   overflow: hidden;
 }
 
-button, a {
- -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+button,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .wrapA {
@@ -127,7 +128,7 @@ button, a {
   flex-wrap: wrap;
   justify-content: center;
 
-  max-width: 518px;
+  max-width: 774px;
   gap: 10px;
   /*background: red;*/
   background: linear-gradient(45deg,
@@ -148,7 +149,7 @@ button, a {
 }
 
 .playButtonA {
-  flex-basis: 166px;
+  flex-basis: 382px;
   /* width of each button */
   margin: 0;
   /* spacing between buttons */
@@ -160,7 +161,7 @@ button, a {
   height: 100%;
   width: 100%;
   top: 0;
-  
+
   --wide: 8.8%;
   --angle1: 0;
   --angle2: -90;
@@ -394,6 +395,13 @@ button, a {
   font-style: normal;
 }
 
+.btnA {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 18.666666666666664px;
+}
+
+
 .btnA:hover,
 .btnB:hover {
   background-color: #0056b3;
@@ -420,13 +428,13 @@ button, a {
 }
 
 .btnD:hover {
-    background-color: #121212;
+  background-color: #121212;
 }
 
 .btnA:focus,
 .btnD:focus {
   outline: 0;
-  box-shadow: 0 0 0 4px rgba(47 254 185 / 100%);
+  box-shadow: 0 0 0 2px rgba(47 254 185 / 100%);
 }
 
 .exitB,
