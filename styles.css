@@ -160,7 +160,7 @@ a {
 
 .video-container.slide .curtain {
   transition: 8s;
-  transition-delay: 1s;
+  transition-delay: 700ms;
   transform: translateY(-100%);
 }
 
