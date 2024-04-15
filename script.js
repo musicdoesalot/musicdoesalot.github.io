@@ -73,7 +73,7 @@ const videoPlayer = (function makeVideoPlayer() {
 const managePlayer = (function makeManagePlayer() {
   const playerVars = {
     autoplay: 0,
-    controls: 1,
+    controls: 0,
     disablekb: 1,
     fs: 0,
     iv_load_policy: 3
