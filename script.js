@@ -80,10 +80,10 @@ const managePlayer = (function makeManagePlayer() {
         //playlist: 1
     };
     const defaults = {
-        height: 408,
+        height: 372,
         host: "https://www.youtube-nocookie.com",
         playerVars,
-        width: 725
+        width: 661
     };
 
     function combinePlayerOptions(opts1 = {}, opts2 = {}) {
@@ -171,11 +171,11 @@ function onYouTubeIframeAPIReady() {
     // Define your radio stations
     const radioStations = [{
         src: "https://solid67.streamupsolutions.com/proxy/" +
-            "qrynsxmv?mp=/stream",
+        "qrynsxmv?mp=/stream",
         title: "heat radio"
     }, {
         src: "https://solid1.streamupsolutions.com/proxy/" +
-            "neukptkl?mp=/stream",
+        "neukptkl?mp=/stream",
         title: "heat classic"
     }, {
         src: "https://getradio.me/svoefm",
@@ -221,7 +221,7 @@ function onYouTubeIframeAPIReady() {
         title: "90s Eurodance"
     }, {
         src: "https://www.liveradio.es/" +
-            "http://62.16.40.250:8000/uralsoundfm",
+        "http://62.16.40.250:8000/uralsoundfm",
         title: "URALSOUND FM"
     }, {
         src: "https://stream.radiojar.com/9ndpdg3c0s8uv",
@@ -234,7 +234,7 @@ function onYouTubeIframeAPIReady() {
         title: "RetroWave.One"
     }, {
         src: "https://stream.synthwaveradio.eu/listen/" +
-            "synthwaveradio.eu/radio.mp3",
+        "synthwaveradio.eu/radio.mp3",
         title: "Synthwave Radio"
     }, {
         src: "https://synthwave-rex.radioca.st/;",
