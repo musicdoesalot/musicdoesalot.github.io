@@ -80,10 +80,10 @@ const managePlayer = (function makeManagePlayer() {
         //playlist: 1
     };
     const defaults = {
-        height: 360,
+        height: 408,
         host: "https://www.youtube-nocookie.com",
         playerVars,
-        width: 640
+        width: 725
     };
 
     function combinePlayerOptions(opts1 = {}, opts2 = {}) {
@@ -260,7 +260,6 @@ function onYouTubeIframeAPIReady() {
             const source = document.createElement("source");
             source.src = station.src;
             source.type = "audio/mpeg";
-
             audio.appendChild(source);
 
             // Add audio element to the body
