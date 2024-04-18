@@ -80,10 +80,10 @@ const managePlayer = (function makeManagePlayer() {
         //playlist: 1
     };
     const defaults = {
-        height: 372,
+        height: 360,
         host: "https://www.youtube-nocookie.com",
         playerVars,
-        width: 661
+        width: 640
     };
 
     function combinePlayerOptions(opts1 = {}, opts2 = {}) {
@@ -134,7 +134,6 @@ function onYouTubeIframeAPIReady() {
         list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
         listType: "playlist",
         shuffle: true
-
     });
 }
 
