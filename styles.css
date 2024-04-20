@@ -44,6 +44,7 @@ a {
   padding-top: 56.25%;
   overflow: hidden;
   position: relative;
+  background: #000
 }
 
 .ratio-keeper iframe {
