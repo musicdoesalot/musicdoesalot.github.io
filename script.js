@@ -117,7 +117,6 @@ const players = (function uiLoadPlayer() {
 
 function onYouTubeIframeAPIReady() {
     // Initialize the first player
-
     players.add(".playA", {
         playerVars: {
             list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
@@ -155,12 +154,14 @@ function onYouTubeIframeAPIReady() {
     function exitClickHandler() {
         resetPage();
         players.add(".playB", {
-            list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
-            listType: "playlist",
-            shuffle: true
+            playerVars: {
+                list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
+                listType: "playlist",
+                shuffle: true
+            }
         });
     }
-    
+
     const exit = document.querySelector(".exitA");
     exit.addEventListener("click", exitClickHandler);
 }());
@@ -170,7 +171,6 @@ function onYouTubeIframeAPIReady() {
         const container = document.querySelector(containerSelector);
         container.classList.add("hide");
     }
-
 
     function showContainer(containerSelector, exitSelector) {
         const container = document.querySelector(containerSelector);
@@ -195,16 +195,17 @@ function onYouTubeIframeAPIReady() {
     function exitClickHandler() {
         resetPage();
         players.add(".playC", {
-            list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
-            listType: "playlist",
-            shuffle: true
+            playerVars: {
+                list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
+                listType: "playlist",
+                shuffle: true
+            }
         });
     }
-    
+
     const exit = document.querySelector(".exitB");
     exit.addEventListener("click", exitClickHandler);
 }());
-
 
 (function manageExitC() {
     function hideContainer(containerSelector) {
