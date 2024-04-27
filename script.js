@@ -160,11 +160,10 @@ function onYouTubeIframeAPIReady() {
             shuffle: true
         });
     }
-
+    
     const exit = document.querySelector(".exitA");
     exit.addEventListener("click", exitClickHandler);
 }());
-
 
 (function manageExitB() {
     function hideContainer(containerSelector) {
@@ -182,7 +181,6 @@ function onYouTubeIframeAPIReady() {
             exitButton.classList.add("visible");
         });
     }
-
 
     function removePlayer() {
         videoPlayer.destroyPlayers();
@@ -202,7 +200,7 @@ function onYouTubeIframeAPIReady() {
             shuffle: true
         });
     }
-
+    
     const exit = document.querySelector(".exitB");
     exit.addEventListener("click", exitClickHandler);
 }());
