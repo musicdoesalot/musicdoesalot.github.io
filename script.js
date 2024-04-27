@@ -2,10 +2,13 @@
 /*jslint browser:true */
 /*jslint devel: true */
 window.onload = function () {
-    const container = document.querySelector(".video-container");
+    const container = document.querySelector(".video-containerA");
     container.classList.add("slide");
-    const wrapper = document.querySelector(".wrap");
-    wrapper.classList.add("visible");
+
+    const exitButton = document.querySelector(".exitA");
+    container.addEventListener("transitionend", function () {
+        exitButton.classList.add("visible");
+    });
 };
 
 const videoPlayer = (function makeVideoPlayer() {
@@ -29,26 +32,10 @@ const videoPlayer = (function makeVideoPlayer() {
     }
 
     function addPlayer(video, playerOptions) {
-        let id = video.dataset.id;
         playerOptions.playerVars = playerOptions.playerVars || {};
-        if (playerOptions.listType && playerOptions.list) {
-            playerOptions.playerVars.listType = playerOptions.listType;
-            playerOptions.playerVars.list = playerOptions.list;
-        } else if (id && id.startsWith("PL")) {
-            playerOptions.playerVars.listType = "playlist";
-            playerOptions.playerVars.list = id;
-        }
-        if (Array.isArray(playerOptions.videoId)) {
-            const randomNumber = Math.random() * playerOptions.videoId.length;
-            const randomIndex = Math.floor(randomNumber);
-            playerOptions.videoId = playerOptions.videoId[randomIndex];
-        } else if (!playerOptions.videoId && id) {
-            playerOptions.videoId = id;
-        }
         video.dataset.shuffle = playerOptions.shuffle;
         playerOptions.events = playerOptions.events || {};
         playerOptions.events.onReady = onPlayerReady;
-        //playerOptions.events.onStateChange = onPlayerStateChange;
         players.push(new YT.Player(video, playerOptions));
     }
 
@@ -130,14 +117,98 @@ const players = (function uiLoadPlayer() {
 
 function onYouTubeIframeAPIReady() {
     // Initialize the first player
-    players.add(".playInitial", {
-        list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
-        listType: "playlist",
-        shuffle: true
+
+    players.add(".playA", {
+        playerVars: {
+            list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
+            listType: "playlist"
+        }
     });
 }
 
-(function manageInitial() {
+(function manageExitA() {
+    function hideContainer(containerSelector) {
+        const container = document.querySelector(containerSelector);
+        container.classList.add("hide");
+    }
+
+    function showContainer(containerSelector, exitSelector) {
+        const container = document.querySelector(containerSelector);
+        const exitButton = document.querySelector(exitSelector);
+        container.classList.remove("hide");
+        container.classList.add("slide");
+        container.addEventListener("animationend", function () {
+            exitButton.classList.add("visible");
+        });
+    }
+
+    function removePlayer() {
+        videoPlayer.destroyPlayers();
+    }
+
+    function resetPage() {
+        hideContainer(".video-containerA");
+        showContainer(".video-containerB", ".exitB");
+        removePlayer();
+    }
+
+    function exitClickHandler() {
+        resetPage();
+        players.add(".playB", {
+            list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
+            listType: "playlist",
+            shuffle: true
+        });
+    }
+
+    const exit = document.querySelector(".exitA");
+    exit.addEventListener("click", exitClickHandler);
+}());
+
+
+(function manageExitB() {
+    function hideContainer(containerSelector) {
+        const container = document.querySelector(containerSelector);
+        container.classList.add("hide");
+    }
+
+
+    function showContainer(containerSelector, exitSelector) {
+        const container = document.querySelector(containerSelector);
+        const exitButton = document.querySelector(exitSelector);
+        container.classList.remove("hide");
+        container.classList.add("slide");
+        container.addEventListener("animationend", function () {
+            exitButton.classList.add("visible");
+        });
+    }
+
+
+    function removePlayer() {
+        videoPlayer.destroyPlayers();
+    }
+
+    function resetPage() {
+        hideContainer(".video-containerB");
+        showContainer(".video-containerC", ".exitC");
+        removePlayer();
+    }
+
+    function exitClickHandler() {
+        resetPage();
+        players.add(".playC", {
+            list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
+            listType: "playlist",
+            shuffle: true
+        });
+    }
+
+    const exit = document.querySelector(".exitB");
+    exit.addEventListener("click", exitClickHandler);
+}());
+
+
+(function manageExitC() {
     function hideContainer(containerSelector) {
         const container = document.querySelector(containerSelector);
         container.classList.add("hide");
@@ -153,15 +224,16 @@ function onYouTubeIframeAPIReady() {
     }
 
     function resetPage() {
-        hideContainer(".containerA");
-        showContainer(".outer-container");
+        hideContainer(".outer-containerA");
+        showContainer(".outer-containerB");
         removePlayer();
     }
 
     function exitClickHandler() {
         resetPage();
     }
-    const exit = document.querySelector(".exitA");
+
+    const exit = document.querySelector(".exitC");
     exit.addEventListener("click", exitClickHandler);
 }());
 
@@ -245,6 +317,7 @@ function onYouTubeIframeAPIReady() {
         buttonClass: "linkButton btnB-primary btnB",
         title: "Last Song Played"
     }];
+
     const buttonContainer = document.querySelector(".buttonContainerA");
 
     // Create audio and button elements for each station
@@ -346,7 +419,7 @@ function onYouTubeIframeAPIReady() {
     addCloseEventToModal();
 }());
 
-(function managePageC() {
+(function managePageD() {
 
     function hideContainer(containerSelector) {
         const container = document.querySelector(containerSelector);
@@ -377,11 +450,12 @@ function onYouTubeIframeAPIReady() {
 
         resetPage();
     }
-    const exit = document.querySelector(".exitB");
+    const exit = document.querySelector(".exitD");
     exit.addEventListener("click", exitClickHandler);
 }());
 
-(function managePageD() {
+
+(function managePageE() {
     function hideContainer(containerSelector) {
         const container = document.querySelector(containerSelector);
         container.classList.add("hide");
@@ -400,6 +474,6 @@ function onYouTubeIframeAPIReady() {
     function exitClickHandler() {
         resetPage();
     }
-    const exit = document.querySelector(".exitC");
+    const exit = document.querySelector(".exitE");
     exit.addEventListener("click", exitClickHandler);
 }());
