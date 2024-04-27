@@ -156,8 +156,7 @@ function onYouTubeIframeAPIReady() {
         players.add(".playB", {
             playerVars: {
                 list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
-                listType: "playlist",
-                shuffle: true
+                listType: "playlist"
             }
         });
     }
@@ -202,7 +201,7 @@ function onYouTubeIframeAPIReady() {
             }
         });
     }
-
+    
     const exit = document.querySelector(".exitB");
     exit.addEventListener("click", exitClickHandler);
 }());
@@ -380,6 +379,7 @@ function onYouTubeIframeAPIReady() {
         });
     });
 }());
+
 (function manageLinkButtonOpen() {
 
     function openModal(target) {
