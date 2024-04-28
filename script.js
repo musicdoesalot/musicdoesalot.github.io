@@ -155,10 +155,11 @@ function onYouTubeIframeAPIReady() {
         resetPage();
         players.add(".playB", {
             playerVars: {
-                list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
-                listType: "playlist"
-            }
-        });
+            list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
+            listType: "playlist"
+        },
+        shuffle: true
+    });
     }
 
     const exit = document.querySelector(".exitA");
