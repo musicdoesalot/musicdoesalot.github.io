@@ -63,7 +63,8 @@ const managePlayer = (function makeManagePlayer() {
         controls: 0,
         disablekb: 1,
         fs: 0,
-        iv_load_policy: 3
+        iv_load_policy: 3,
+        shuffle: 1
         //playlist: 1
     };
     const defaults = {
@@ -119,10 +120,10 @@ function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playA", {
         playerVars: {
-            list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
-            listType: "playlist",
-            shuffle: "true"
-        }
+            list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
+            listType: "playlist"
+        },
+        shuffle: true
     });
 }
 
@@ -158,7 +159,8 @@ function onYouTubeIframeAPIReady() {
             playerVars: {
                 list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
                 listType: "playlist"
-            }
+            },
+            shuffle: true
         });
     }
 
@@ -196,13 +198,13 @@ function onYouTubeIframeAPIReady() {
         resetPage();
         players.add(".playC", {
             playerVars: {
-                list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
-                listType: "playlist",
-                shuffle: true
-            }
+                list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
+                listType: "playlist"
+            },
+            shuffle: true
         });
     }
-    
+
     const exit = document.querySelector(".exitB");
     exit.addEventListener("click", exitClickHandler);
 }());
