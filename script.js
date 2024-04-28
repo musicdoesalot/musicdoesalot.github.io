@@ -63,9 +63,7 @@ const managePlayer = (function makeManagePlayer() {
         controls: 0,
         disablekb: 1,
         fs: 0,
-        iv_load_policy: 3,
-        shuffle: 1
-        //playlist: 1
+        iv_load_policy: 3
     };
     const defaults = {
         height: 360,
