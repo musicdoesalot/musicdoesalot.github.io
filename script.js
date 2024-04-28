@@ -120,7 +120,7 @@ function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playA", {
         playerVars: {
-            list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
+            list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2"
             listType: "playlist"
         },
         shuffle: true
