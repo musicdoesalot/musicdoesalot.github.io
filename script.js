@@ -195,7 +195,7 @@ function onYouTubeIframeAPIReady() {
         resetPage();
         players.add(".playC", {
             playerVars: {
-                list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
+                list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
                 listType: "playlist"
             },
             shuffle: true
