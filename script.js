@@ -180,7 +180,6 @@ function updateTimer() {
     }
   });
 }
-
     const exit = document.querySelector(".exitA");
     exit.addEventListener("click", exitClickHandler);
 }());
