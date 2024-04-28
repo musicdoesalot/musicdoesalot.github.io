@@ -301,7 +301,6 @@ a {
 .close {
   position: absolute;
   margin: 6px auto 0;
-  /*inset: 0 0 0 0;*/
   left: 0;
   right: 0;
   width: 47px;
@@ -327,12 +326,10 @@ a {
   transform: rotate(45deg);
 }
 
-
 .exitD::after,
 .close::after {
   transform: rotate(-45deg);
 }
-
 
 .containerC {
   margin: auto;
@@ -433,7 +430,7 @@ a {
   background: #121212;
   text-align: center;
   word-wrap: break-word;
-  padding: 22px 8px 8px;
+  padding: 22px 8px 0;
   font-family: Verdana, Arial, sans-serif;
   font-size: 13.33px;
   line-height: 1.5;
