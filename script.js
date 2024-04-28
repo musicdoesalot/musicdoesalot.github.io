@@ -1,4 +1,4 @@
-/*global YT */
+
 /*jslint browser:true */
 /*jslint devel: true */
 window.onload = function () {
