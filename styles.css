@@ -18,6 +18,10 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.outer-containerA {
+  background: #181d38;;
+}
+
 .outer-containerA,
 .outer-containerB,
 .modal {
@@ -26,10 +30,6 @@ a {
   inset: 0;
   overflow: auto;
   /* Enable scroll if needed */
-}
-
-.outer-containerA {
-  background: #181d38;;
 }
 
 .video-containerA,
