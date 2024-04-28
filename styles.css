@@ -83,8 +83,7 @@ a {
       #ffffff1a calc(var(--wide) + 1px),
       #0000004d calc(var(--wide) + 2px),
       #ffffff00 calc(var(--wide) + 5px));
-  /*background-color: #222;*/
-  background-color: transparent;
+  background-color: #222;
   border-bottom: 2px solid #191919;
   background-repeat: no-repeat;
   overflow: hidden;
