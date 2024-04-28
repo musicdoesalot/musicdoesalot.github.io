@@ -18,10 +18,11 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.outer-containerA {
+.outer-containerA,
+.outer-containerB,
+.modal  {
   display: flex;
   position: fixed;
-  z-index: 3;
   left: 0;
   right: 0;
   top: 0;
@@ -108,12 +109,12 @@ a {
   animation-delay: 900ms;
 }
 
-.outer-containerB {
+/*.outer-containerB {
  display: flex;
  position: fixed;
  inset:0 0 0 0;
  overflow: auto;
-}
+}*/
 
 .containerB,
 .containerC {
@@ -143,12 +144,6 @@ a {
 }
 
 .modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
   /*background: rgba(0, 0, 0, 0.4);*/
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   transform: translate(0, -25%);
