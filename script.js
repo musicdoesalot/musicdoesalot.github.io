@@ -151,6 +151,7 @@ function onYouTubeIframeAPIReady() {
         removePlayer();
     }
 
+    
 function exitClickHandler() {
   resetPage();
   updateTimer();/* added this */
@@ -180,6 +181,7 @@ function updateTimer() {
     }
   });
 }
+
     const exit = document.querySelector(".exitA");
     exit.addEventListener("click", exitClickHandler);
 }());
