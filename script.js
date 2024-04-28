@@ -118,7 +118,7 @@ function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playA", {
         playerVars: {
-            list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
+            list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
             listType: "playlist"
         },
         shuffle: true
@@ -151,37 +151,16 @@ function onYouTubeIframeAPIReady() {
         removePlayer();
     }
 
-    
-function exitClickHandler() {
-  resetPage();
-  updateTimer();/* added this */
-  players.add(".playB", {
-    playerVars: {
-      list: "PLGBuKfnErZlAdX8X5LC9ODeHaxoxTuV2z",
-      listType: "playlist"
-    },
-    shuffle: true
-  });
-}
-
-function updateTimer() {
-  let seconds = 0;
-  let timerId = setInterval(updateTimer, 100);
-
-  function updateTimer() {
-    seconds += 0.1;
-    document.getElementById("timer").innerHTML =
-      seconds.toFixed(1) + " seconds";
-  }
-
-  document.body.addEventListener("click", function (e) {
-    if (e.target.className !== "exitA") {
-      clearInterval(timerId);
-      document.getElementById("timer").innerHTML += " (stopped)";
+    function exitClickHandler() {
+        resetPage();
+        players.add(".playB", {
+            playerVars: {
+                list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
+                listType: "playlist",
+                loop: 0
+            }
+        });
     }
-  });
-}
-
     const exit = document.querySelector(".exitA");
     exit.addEventListener("click", exitClickHandler);
 }());
