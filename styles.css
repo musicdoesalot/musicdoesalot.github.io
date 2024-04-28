@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  background: red;
+  background: #121212;
   padding: 0 8px 0;
 }
 
@@ -19,7 +19,7 @@ a {
 }
 
 .outer-containerA {
-  background: #181d38;
+  background: red;
 }
 
 .outer-containerA,
