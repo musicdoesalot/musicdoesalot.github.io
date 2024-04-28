@@ -88,7 +88,7 @@ a {
 
 .video-containerA.slide .curtain {
   transition: 8s;
-  transition-delay: 700ms;
+  transition-delay: 900ms;
   transform: translateY(-100%);
 }
 
@@ -105,7 +105,7 @@ a {
 .video-containerB.slide .curtain,
 .video-containerC.slide .curtain {
   animation: slide 8s forwards;
-  animation-delay: 700ms;
+  animation-delay: 900ms;
 }
 
 .outer-containerB {
