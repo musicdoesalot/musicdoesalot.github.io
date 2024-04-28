@@ -41,20 +41,6 @@
 
 <p id="timer"></p>
 
-<script>
-let seconds = 0;
-let timerId = setInterval(updateTimer, 100);
-
-function updateTimer() {
-    seconds += 0.1;
-    document.getElementById("timer").innerHTML = seconds.toFixed(1) + " seconds";
-}
-
-document.body.addEventListener("click", function() {
-    clearInterval(timerId);
-    document.getElementById("timer").innerHTML += " (stopped)";
-});
-</script>
 
         
       </div>
