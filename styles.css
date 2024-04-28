@@ -109,8 +109,10 @@ a {
 }
 
 .outer-containerB {
-  display: flex;
-  min-height: 100vh;
+ display: flex;
+ position: fixed;
+ inset:0 0 0 0;
+ overflow: auto;
 }
 
 .containerB,
