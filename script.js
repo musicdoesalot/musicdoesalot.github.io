@@ -120,7 +120,7 @@ function onYouTubeIframeAPIReady() {
     // Initialize the first player
     players.add(".playA", {
         playerVars: {
-            list: "PLlotB_y9MoPlvAJM52qOYh9FA8VonzVki",
+            list: "PLlotB_y9MoPmg6IhXa63Dvb30MJIHpzi2",
             listType: "playlist"
         },
         shuffle: true
@@ -159,8 +159,7 @@ function onYouTubeIframeAPIReady() {
             playerVars: {
                 list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
                 listType: "playlist"
-            },
-            shuffle: true
+            }
         });
     }
 
