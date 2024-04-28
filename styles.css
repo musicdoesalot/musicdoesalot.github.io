@@ -19,15 +19,17 @@ a {
 }
 
 .outer-containerA {
+  background: #181d38;
+}
+
+.outer-containerA,
+.outer-containerB,
+.modal {
   display: flex;
   position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  inset: 0;
   overflow: auto;
   /* Enable scroll if needed */
-  background: #181d38;
 }
 
 .video-containerA,
@@ -48,19 +50,24 @@ a {
 }
 
 .ratio-keeper iframe {
-  position: absolute;
+  /*position: absolute;
   top: 0;
-  left: 0;
+  left: 0;*/
   width: 100%;
   height: 100%;
 }
 
+.ratio-keeper iframe,
 .curtain {
   position: absolute;
+  inset: 0;
+}
+
+.curtain {
+  /*position: absolute;
   height: 100%;
   width: 100%;
-  top: 0;
-
+  inset:0;*/
   --wide: 8.8%;
   --angle1: 0;
   --angle2: -90;
@@ -86,7 +93,7 @@ a {
 
 .video-containerA.slide .curtain {
   transition: 8s;
-  transition-delay: 2s;
+  transition-delay: 900ms;
   transform: translateY(-100%);
 }
 
@@ -103,7 +110,7 @@ a {
 .video-containerB.slide .curtain,
 .video-containerC.slide .curtain {
   animation: slide 8s forwards;
-  animation-delay: 2s;
+  animation-delay: 900ms;
 }
 
 .outer-containerB {
