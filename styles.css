@@ -37,7 +37,7 @@ a {
 .video-containerC {
   flex: 1 0 0;
   margin: auto;
-  max-width: 640px;
+  max-width: 720px;
   position: relative;
 }
 
