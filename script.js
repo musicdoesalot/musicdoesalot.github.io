@@ -401,21 +401,17 @@ function onYouTubeIframeAPIReady() {
 
 (function manageLinkButtonClose() {
 
-    function closeModal(modal) {
-        modal.classList.remove("active");
-    }
+  function closeModal(modal) {
+    modal.classList.remove("active");
+  }
 
-    function addCloseEventToModal() {
-        const closeModals = document.querySelectorAll(".close");
-
-        closeModals.forEach(function (modal) {
-            modal.addEventListener("click", function () {
-                //closeModal(event.target.closest(".modalB"));
-                closeModal(document.querySelector(".modal"));
-            });
-        });
-    }
-    addCloseEventToModal();
+  function addCloseEventToModal() {
+    const closeModalElement = document.querySelector(".close");
+    closeModalElement.addEventListener("click", function() {
+      closeModal(document.querySelector(".modal"));
+    });
+  }
+  addCloseEventToModal();
 }());
 
 (function managePageD() {
