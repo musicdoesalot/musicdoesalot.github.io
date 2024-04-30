@@ -91,7 +91,7 @@ a {
 }
 
 .video-containerA.slide .curtain {
-  transition: 8s;
+  transition: 8s ease-in-out;
   transition-delay: 2.2s;
   transform: translateY(-100%);
 }
@@ -108,9 +108,10 @@ a {
 
 .video-containerB.slide .curtain,
 .video-containerC.slide .curtain {
-  animation: slide 8s forwards;
+  animation: slide 8s ease-in-out forwards;
   animation-delay: 2.2s;
 }
+
 
 .outer-containerB {
   display: flex;
@@ -273,7 +274,7 @@ a {
   justify-content: center;
   cursor: pointer;
   opacity: 0;
-  transition: opacity 3s ease-in;
+  transition: opacity 2s ease-in;
   transition-delay: 1s;
   pointer-events: none;
 }
