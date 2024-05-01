@@ -87,7 +87,6 @@ a {
   border-bottom: 2px solid #191919;
   background-repeat: no-repeat;
   overflow: hidden;
-  transform: translateY(0%);
 }
 
 .video-containerA.slide .curtain {
@@ -97,11 +96,7 @@ a {
 }
 
 @keyframes slide {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
+  to {
     transform: translateY(-100%);
   }
 }
@@ -111,7 +106,6 @@ a {
   animation: slide 8s ease-in-out forwards;
   animation-delay: 2.2s;
 }
-
 
 .outer-containerB {
   display: flex;
