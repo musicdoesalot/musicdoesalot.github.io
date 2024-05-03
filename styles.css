@@ -63,6 +63,7 @@ a {
   inset: 0;
 }
 
+
 .curtain {
   /*position: absolute;
   height: 100%;
@@ -89,9 +90,48 @@ a {
   overflow: hidden;
 }
 
+.spinner {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 9px solid;
+  background: transparent;
+  filter: drop-shadow(3px 3px 3px #000000b3);
+  pointer-events: none;
+}
+
+.spinner {
+  animation: rotate 2s linear forwards, fadeOut 1s 2s forwards;
+  border-color: red transparent red transparent;
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(360deg);
+    border-color: red transparent red transparent;
+  }
+
+  100% {
+    transform: rotate(720deg);
+    border-color: red transparent red transparent;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
 .video-containerA.slide .curtain {
   transition: 8s ease-in-out;
-  transition-delay: 2.2s;
+  transition-delay: 1s;
   transform: translateY(-100%);
 }
 
@@ -104,7 +144,7 @@ a {
 .video-containerB.slide .curtain,
 .video-containerC.slide .curtain {
   animation: slide 8s ease-in-out forwards;
-  animation-delay: 2.2s;
+
 }
 
 .outer-containerB {
