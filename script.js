@@ -3,9 +3,13 @@
 /*jslint devel: true */
 window.onload = function () {
     const container = document.querySelector(".video-containerA");
-    container.classList.add("slide");
-
+    const spinner = document.querySelector(".spinner");
     const exitButton = document.querySelector(".exitA");
+
+    spinner.addEventListener("animationend", function () {
+        container.classList.add("slide");
+    });
+
     container.addEventListener("transitionend", function () {
         exitButton.classList.add("visible");
     });
@@ -131,12 +135,21 @@ function onYouTubeIframeAPIReady() {
         container.classList.add("hide");
     }
 
-    function showContainer(containerSelector, exitSelector) {
+    function showContainer(containerSelector, spinnerSelector, exitSelector) {
         const container = document.querySelector(containerSelector);
         const exitButton = document.querySelector(exitSelector);
+        const spinner = document.querySelector(spinnerSelector);
+
         container.classList.remove("hide");
-        container.classList.add("slide");
-        container.addEventListener("animationend", function () {
+
+        spinner.addEventListener("animationend", function () {
+            container.classList.add("slide");
+        });
+
+        container.addEventListener("animationend", function (event) {
+            if (event.animationName !== "slide") {
+                return;
+            }
             exitButton.classList.add("visible");
         });
     }
@@ -147,7 +160,11 @@ function onYouTubeIframeAPIReady() {
 
     function resetPage() {
         hideContainer(".video-containerA");
-        showContainer(".video-containerB", ".exitB");
+        showContainer(
+            ".video-containerB",
+            ".video-containerB .spinner",
+            ".exitB"
+        );
         removePlayer();
     }
 
@@ -155,7 +172,7 @@ function onYouTubeIframeAPIReady() {
         resetPage();
         players.add(".playB", {
             playerVars: {
-                list: "PLlotB_y9MoPlnu6HqLFkPaOLTn-sCPEW3",
+                list: "PLlotB_y9MoPlnu6HqLFkPaOLTn",
                 listType: "playlist",
                 loop: 0
             }
@@ -171,12 +188,21 @@ function onYouTubeIframeAPIReady() {
         container.classList.add("hide");
     }
 
-    function showContainer(containerSelector, exitSelector) {
+    function showContainer(containerSelector, spinnerSelector, exitSelector) {
         const container = document.querySelector(containerSelector);
         const exitButton = document.querySelector(exitSelector);
+        const spinner = document.querySelector(spinnerSelector);
+
         container.classList.remove("hide");
-        container.classList.add("slide");
-        container.addEventListener("animationend", function () {
+
+        spinner.addEventListener("animationend", function () {
+            container.classList.add("slide");
+        });
+
+        container.addEventListener("animationend", function (event) {
+            if (event.animationName !== "slide") {
+                return;
+            }
             exitButton.classList.add("visible");
         });
     }
@@ -187,7 +213,11 @@ function onYouTubeIframeAPIReady() {
 
     function resetPage() {
         hideContainer(".video-containerB");
-        showContainer(".video-containerC", ".exitC");
+        showContainer(
+            ".video-containerC",
+            ".video-containerC .spinner",
+            ".exitC"
+        );
         removePlayer();
     }
 
