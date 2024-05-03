@@ -41,6 +41,42 @@ a {
   position: relative;
 }
 
+@keyframes rotate {
+  50% {
+    transform: rotate(360deg);
+    border-color: red transparent red transparent;
+  }
+
+  100% {
+    transform: rotate(720deg);
+    border-color: red transparent red transparent;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+.spinner {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 9px solid;
+  background: transparent;
+  filter: drop-shadow(3px 3px 3px #000000b3);
+  pointer-events: none;
+  animation: rotate 2s linear forwards, fadeOut 1s 2s forwards;
+  border-color: red transparent red transparent;
+}
+
 .ratio-keeper {
   height: 0;
   padding-top: 56.25%;
@@ -62,7 +98,6 @@ a {
   position: absolute;
   inset: 0;
 }
-
 
 .curtain {
   /*position: absolute;
@@ -90,45 +125,6 @@ a {
   overflow: hidden;
 }
 
-.spinner {
-  -webkit-appearance: none;
-  appearance: none;
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 9px solid;
-  background: transparent;
-  filter: drop-shadow(3px 3px 3px #000000b3);
-  pointer-events: none;
-}
-
-.spinner {
-  animation: rotate 2s linear forwards, fadeOut 1s 2s forwards;
-  border-color: red transparent red transparent;
-}
-
-@keyframes rotate {
-  50% {
-    transform: rotate(360deg);
-    border-color: red transparent red transparent;
-  }
-
-  100% {
-    transform: rotate(720deg);
-    border-color: red transparent red transparent;
-  }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-  }
-}
-
 .video-containerA.slide .curtain {
   transition: 8s ease-in-out;
   transition-delay: 1s;
@@ -144,7 +140,6 @@ a {
 .video-containerB.slide .curtain,
 .video-containerC.slide .curtain {
   animation: slide 8s ease-in-out forwards;
-
 }
 
 .outer-containerB {
