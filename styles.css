@@ -339,6 +339,7 @@ a {
 .exitA,
 .exitB,
 .exitC {
+  transform: translateY(100%);
   position: absolute;
   inset: auto 0 -6px 0;
   /*top: auto;
