@@ -109,9 +109,9 @@ a {
 }
 
 .flex-container {
-  height: 100%;
+  position: absolute;
+  inset: 0 0 0 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -592,16 +592,6 @@ a {
   padding: 0;
 }
 
-.outer-containerA.hide,
-.video-containerA.hide,
-.video-containerB.hide,
-.video-containerC.hide,
-.outer-containerB.hide,
-.containerB.hide,
-.containerC.hide {
+.hide {
   display: none;
 }
-
-/*.hide {
-  display: none;
-}*/
