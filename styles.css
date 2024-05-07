@@ -50,9 +50,6 @@ a {
 }
 
 .ratio-keeper iframe {
-  /*position: absolute;
-  top: 0;
-  left: 0;*/
   width: 100%;
   height: 100%;
 }
@@ -64,10 +61,6 @@ a {
 }
 
 .curtain {
-  /*position: absolute;
-  height: 100%;
-  width: 100%;
-  inset:0;*/
   --wide: 8.8%;
   --angle1: 0;
   --angle2: -90;
@@ -98,14 +91,12 @@ a {
 
 .video-containerA.slide .curtain {
   transition: 8s ease-in-out;
-  /*transition-delay: 1s;*/
   transform: translateY(-100%);
 }
 
 .video-containerB.slide .curtain,
 .video-containerC.slide .curtain {
   animation: slide 8s ease-in-out forwards;
-  /*animation-delay: 3s;*/
 }
 
 .flex-container {
@@ -330,7 +321,6 @@ a {
   background-color: #121212;
 }
 
-/*.btnA:focus,*/
 .btnB:focus {
   outline: 0;
   box-shadow: 0 0 0 2px rgba(47 254 185 / 100%);
@@ -342,44 +332,18 @@ a {
   transform: translateY(100%);
   position: absolute;
   inset: auto 0 -6px 0;
-  /*top: auto;
-  bottom: -6px;*/
   margin: auto;
-  /*right: 0;
-  left: 0;*/
   width: 47px;
   height: 47px;
   background: black;
   border-radius: 50%;
-  border: 5px solid red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 5px solid #0059dd;
+
   cursor: pointer;
   opacity: 0;
   transition: opacity 2s ease-in;
   transition-delay: 1s;
   pointer-events: none;
-}
-
-.exitA::before,
-.exitA::after,
-.exitB::before,
-.exitB::after,
-.exitC::before,
-.exitC::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  background: red;
-  transform: rotate(45deg);
-}
-
-.exitA::after,
-.exitB::after,
-.exitC::after {
-  transform: rotate(-45deg);
 }
 
 .exitA.visible,
@@ -400,28 +364,8 @@ a {
   height: 47px;
   background: black;
   border-radius: 50%;
-  border: 5px solid red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 5px solid #0059dd;
   cursor: pointer;
-}
-
-.exitD::before,
-.exitD::after,
-.close::before,
-.close::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  background: red;
-  transform: rotate(45deg);
-}
-
-.exitD::after,
-.close::after {
-  transform: rotate(-45deg);
 }
 
 .containerC {
@@ -498,23 +442,7 @@ a {
   border-radius: 50%;
   border: 5px solid #0059dd;
   display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-}
-
-.exitE::before,
-.exitE::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 5px;
-  background: #0059dd;
-  transform: rotate(45deg);
-}
-
-.exitE::after {
-  transform: rotate(-45deg);
 }
 
 .my-footer {
