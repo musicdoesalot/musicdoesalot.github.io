@@ -140,7 +140,6 @@ a {
 .video-containerB .heart,
 .video-containerC .heart {
   animation: fadeInHeart 3s ease-in forwards;
-  animation-delay: 2.5s;
 }
 
 [class*="heart-piece-"] {
