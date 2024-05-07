@@ -128,7 +128,7 @@ a {
 }
 
 .video-containerA .heart {
-  transition: opacity 3s ease-in 2.5s;
+  transition: opacity 3s ease-in;
 }
 
 @keyframes fadeInHeart {
