@@ -128,7 +128,7 @@ a {
 }
 
 .video-containerA .heart {
-  transition: opacity 3s ease-in;
+  transition: opacity 3s ease-in 1.5s;
 }
 
 @keyframes fadeInHeart {
@@ -139,7 +139,7 @@ a {
 
 .video-containerB .heart,
 .video-containerC .heart {
-  animation: fadeInHeart 3s ease-in forwards;
+  animation: fadeInHeart 3s ease-in 1.5s forwards;
 }
 
 [class*="heart-piece-"] {
