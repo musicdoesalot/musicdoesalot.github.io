@@ -41,42 +41,6 @@ a {
   position: relative;
 }
 
-@keyframes rotate {
-  50% {
-    transform: rotate(360deg);
-    border-color: red transparent red transparent;
-  }
-
-  100% {
-    transform: rotate(720deg);
-    border-color: red transparent red transparent;
-  }
-}
-
-@keyframes fadeOut {
-  to {
-    opacity: 0;
-  }
-}
-
-.spinner {
-  -webkit-appearance: none;
-  appearance: none;
-  position: absolute;
-  inset: 0;
-  margin: auto;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: 9px solid;
-  background: transparent;
-  filter: drop-shadow(3px 3px 3px #000000b3);
-  pointer-events: none;
-  animation: rotate 2s linear forwards, fadeOut 1s 2s forwards;
-  border-color: red transparent red transparent;
-}
-
 .ratio-keeper {
   height: 0;
   padding-top: 56.25%;
@@ -123,12 +87,7 @@ a {
   border-bottom: 2px solid #191919;
   background-repeat: no-repeat;
   overflow: hidden;
-}
-
-.video-containerA.slide .curtain {
-  transition: 8s ease-in-out;
-  transition-delay: 1s;
-  transform: translateY(-100%);
+  transform: translateY(0);
 }
 
 @keyframes slide {
@@ -137,19 +96,122 @@ a {
   }
 }
 
+.video-containerA.slide .curtain {
+  transition: 8s ease-in-out;
+  /*transition-delay: 1s;*/
+  transform: translateY(-100%);
+}
+
 .video-containerB.slide .curtain,
 .video-containerC.slide .curtain {
   animation: slide 8s ease-in-out forwards;
+  /*animation-delay: 3s;*/
 }
 
-.outer-containerB {
+.flex-container {
+  height: 100%;
   display: flex;
-  position: fixed;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  position: relative;
+  width: 138px;
+  height: 33px;
+  opacity: 0;
+}
+
+.heart.visible {
+  opacity: 1;
+}
+
+.video-containerA .heart {
+  transition: opacity 3s ease-in 2.5s;
+}
+
+@keyframes fadeInHeart {
+  to {
+    opacity: 1;
+  }
+}
+
+.video-containerB .heart,
+.video-containerC .heart {
+  animation: fadeInHeart 3s ease-in forwards;
+  animation-delay: 2.5s;
+}
+
+[class*="heart-piece-"] {
+  position: absolute;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.heart-piece-0 {
   left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  overflow: auto;
+  height: 30px;
+  top: -15px;
+  background-color: #0059dd;
+}
+
+.heart-piece-1 {
+  left: 16px;
+  height: 60px;
+  top: -31px;
+  background-color: #0059dd;
+}
+
+.heart-piece-2 {
+  left: 32px;
+  height: 80px;
+  top: -37px;
+  background-color: #0059dd;
+}
+
+.heart-piece-3 {
+  left: 48px;
+  height: 90px;
+  top: -31px;
+  background-color: #0059dd;
+}
+
+.heart-piece-4 {
+  left: 64px;
+  height: 94px;
+  top: -23px;
+  background-color: #0059dd;
+}
+
+.heart-piece-5 {
+  left: 80px;
+  height: 90px;
+  top: -31px;
+  background-color: #0059dd;
+}
+
+.heart-piece-6 {
+  left: 96px;
+  height: 80px;
+  top: -37px;
+  background-color: #0059dd;
+}
+
+.heart-piece-7 {
+  left: 112px;
+  height: 60px;
+  top: -31px;
+  background-color: #0059dd;
+}
+
+.heart-piece-8 {
+  left: 128px;
+  height: 30px;
+  top: -15px;
+  background-color: #0059dd;
 }
 
 .containerB,
@@ -180,13 +242,6 @@ a {
 }
 
 .modal {
-  display: flex;
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  overflow: auto;
   /*background: rgba(0, 0, 0, 0.4);*/
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   transform: translate(0, -25%);
@@ -253,7 +308,7 @@ a {
 .btnA:hover {
   background-color: #0056b3;
   border-color: #0a58ca;
-  color: #ffffff;
+  color: #fff;
 }
 
 .played {
@@ -264,7 +319,7 @@ a {
 
 .btnB-primary {
   color: #2fdcfe;
-  background-color: #000000;
+  background-color: #000;
   border-color: #2fdcfe;
 }
 
@@ -465,7 +520,7 @@ a {
 
 .my-footer {
   box-sizing: border-box;
-  border-top: 1px solid #1155cc;
+  border-top: 1px solid #15c;
   background: #121212;
   text-align: center;
   word-wrap: break-word;
@@ -546,3 +601,7 @@ a {
 .containerC.hide {
   display: none;
 }
+
+/*.hide {
+  display: none;
+}*/
