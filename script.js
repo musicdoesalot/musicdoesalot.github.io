@@ -1,6 +1,3 @@
-/*global YT */
-/*jslint browser:true */
-/*jslint devel: true */
 window.onload = function () {
     const container = document.querySelector(".video-containerA");
     const heartPiece = document.querySelector(".heart");
@@ -376,7 +373,7 @@ function onYouTubeIframeAPIReady() {
             document.body.appendChild(audio);
 
             // Create button element
-            button.classList.add("playButton", "btnA-primary", "btnA");
+            button.classList.add("playButtonA", "btnA-primary", "btnA");
             button.dataset.src = station.src;
             button.textContent = station.title;
 
@@ -391,7 +388,7 @@ function onYouTubeIframeAPIReady() {
         }
     });
 
-    const buttons = document.querySelectorAll(".playButton");
+    const buttons = document.querySelectorAll(".playButtonA");
     const audios = document.querySelectorAll("audio");
 
     buttons.forEach(function (button, index) {
@@ -446,9 +443,9 @@ function onYouTubeIframeAPIReady() {
     }
 
     function addCloseEventToModal() {
-        const closeModalElement = document.querySelector(".close");
+        const closeModalElement = document.querySelector(".closeA");
         closeModalElement.addEventListener("click", function () {
-            closeModal(document.querySelector(".modal"));
+            closeModal(document.querySelector(".modalA"));
         });
     }
     addCloseEventToModal();
@@ -473,7 +470,7 @@ function onYouTubeIframeAPIReady() {
     }
 
     function exitClickHandler() {
-        const buttons = document.querySelectorAll(".playButton");
+        const buttons = document.querySelectorAll(".playButtonA");
         const audios = document.querySelectorAll("audio");
 
         audios.forEach(function (audio) {
@@ -489,25 +486,64 @@ function onYouTubeIframeAPIReady() {
     exit.addEventListener("click", exitClickHandler);
 }());
 
-(function managePageE() {
-    function hideContainer(containerSelector) {
-        const container = document.querySelector(containerSelector);
-        container.classList.add("hide");
+
+(function manageOpenModel() {
+    function openModal(target) {
+        const modal = document.querySelector(target);
+        const container = modal.querySelector(".inner-modalB");
+        const heartPiece = modal.querySelector(".heart");
+        const closeButton = modal.querySelector(".closeB");
+
+        modal.classList.add("active");
+        modal.querySelector(".heart").classList.add("visible");
+
+        heartPiece.addEventListener("transitionend", function () {
+            container.classList.add("slide");
+        });
+
+        container.addEventListener("transitionend", function (event) {
+            if (event.propertyName !== "transform") {
+                return;
+            }
+            closeButton.classList.add("visible");
+        });
     }
 
-    function showContainer(containerSelector) {
-        const container = document.querySelector(containerSelector);
-        container.classList.remove("hide");
+    function addPlayerToButtons() {
+        const button = document.querySelector(".playButtonB");
+
+        button.addEventListener("click", function (event) {
+            openModal(event.currentTarget.dataset.destination);
+            players.add(".buttonA", {
+                videoId: "yq5KBfbmark"
+            });
+
+            // Disable the button after it is clicked once
+            button.disabled = true;
+
+            // Change the title attribute to "Closed"
+            button.title = "Closed";
+        });
     }
 
-    function resetPage() {
-        hideContainer(".containerC");
-        showContainer(".containerB");
+    addPlayerToButtons();
+}());
+
+(function manageCloseModel() {
+    function removePlayer() {
+        videoPlayer.destroyPlayers();
     }
 
-    function exitClickHandler() {
-        resetPage();
+    function closeModal(modal) {
+        modal.classList.remove("active");
+        removePlayer();
     }
-    const exit = document.querySelector(".exitE");
-    exit.addEventListener("click", exitClickHandler);
+
+    function addCloseEventToModal() {
+        const closeModalElement = document.querySelector(".closeB");
+        closeModalElement.addEventListener("click", function () {
+            closeModal(document.querySelector(".modalB"));
+        });
+    }
+    addCloseEventToModal();
 }());
