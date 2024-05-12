@@ -9,7 +9,8 @@ body {
   padding: 0 8px 0;
 }
 
-body:has(.modal.active) {
+body:has(.modalA.active),
+body:has(.modalB.active) {
   overflow: hidden;
 }
 
@@ -24,7 +25,8 @@ a {
 
 .outer-containerA,
 .outer-containerB,
-.modal {
+.modalA,
+.modalB {
   display: flex;
   position: fixed;
   inset: 0;
@@ -34,7 +36,8 @@ a {
 
 .video-containerA,
 .video-containerB,
-.video-containerC {
+.video-containerC,
+.inner-modalB {
   flex: 1 0 0;
   margin: auto;
   max-width: 640px;
@@ -83,15 +86,17 @@ a {
   transform: translateY(0);
 }
 
+
+.video-containerA.slide .curtain,
+.inner-modalB.slide .curtain {
+  transition: 8s ease-in-out;
+  transform: translateY(-100%);
+}
+
 @keyframes slide {
   to {
     transform: translateY(-100%);
   }
-}
-
-.video-containerA.slide .curtain {
-  transition: 8s ease-in-out;
-  transform: translateY(-100%);
 }
 
 .video-containerB.slide .curtain,
@@ -118,7 +123,8 @@ a {
   opacity: 1;
 }
 
-.video-containerA .heart {
+.video-containerA .heart,
+.inner-modalB .heart {
   transition: opacity 3s ease-in 1.5s;
 }
 
@@ -218,7 +224,7 @@ a {
   gap: 10px;
 }
 
-.playButton,
+.playButtonA,
 .linkButton {
   flex-basis: 183px;
 
@@ -231,7 +237,8 @@ a {
   cursor: pointer;
 }
 
-.modal {
+.modalA,
+.modalB {
   /*background: rgba(0, 0, 0, 0.4);*/
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
   transform: translate(0, -25%);
@@ -251,7 +258,8 @@ a {
     repeating-linear-gradient(90deg, var(--brick1) 0 47.5%, var(--lines) 0 50%, var(--brick1) 0 97.5%, var(--lines) 0 100%) var(--gp-ln);
 }
 
-.modal.active {
+.modalA.active,
+.modalB.active {
   opacity: 1;
   transform: scale(1);
   z-index: 1000;
@@ -261,7 +269,8 @@ a {
   padding: 8px 8px;
 }
 
-.inner-modal {
+.inner-modalA,
+.inner-modalB {
   position: relative;
   margin: auto;
 }
@@ -328,7 +337,8 @@ a {
 
 .exitA,
 .exitB,
-.exitC {
+.exitC,
+.closeB {
   transform: translateY(100%);
   position: absolute;
   inset: auto 0 -6px 0;
@@ -338,7 +348,6 @@ a {
   background: black;
   border-radius: 50%;
   border: 5px solid #0059dd;
-
   cursor: pointer;
   opacity: 0;
   transition: opacity 2s ease-in;
@@ -348,14 +357,15 @@ a {
 
 .exitA.visible,
 .exitB.visible,
-.exitC.visible {
+.exitC.visible,
+.closeB.visible {
   opacity: 1;
   pointer-events: auto;
   cursor: pointer;
 }
 
 .exitD,
-.close {
+.closeA {
   position: absolute;
   margin: 6px auto 0;
   left: 0;
@@ -429,29 +439,73 @@ a {
   background: none;
 }
 
-.exitE {
+.btn-wrap {
   position: relative;
-  margin: 7px auto 0;
+  z-index: 0;
+  padding: 0 0;
+  margin: 20px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.btn-wrap:before,
+.btn-wrap:after {
+  content: "";
+  flex: 1 0 0;
+  height: 1px;
+  background: #0059dd;
+  transform: translatey(1px);
+}
+
+.btn-wrap:before {
+  margin-right: 5px;
+}
+
+.btn-wrap:after {
+  margin-left: 5px;
+}
+
+.playButtonB {
+  position: relative;
+  z-index: auto;
+  margin: 0 auto;
   inset: 0 0 0 0;
   width: 47px;
   height: 47px;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  background: black;
+  background: transparent;
   border-radius: 50%;
   border: 5px solid #0059dd;
   display: flex;
   cursor: pointer;
 }
 
+.playButtonB:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -11px;
+  top: -11px;
+  width: 57px;
+  height: 30px;
+  border: 1px solid #0059dd;
+  border-bottom: transparent;
+  border-radius: 30px 30px 0 0;
+  pointer-events: none;
+}
+
+button:disabled {
+  background-image: linear-gradient(135deg, #ff6bff 0%, #00e6e6 100%);
+  cursor: not-allowed;
+}
+
 .my-footer {
-  box-sizing: border-box;
-  border-top: 1px solid #15c;
   background: #121212;
   text-align: center;
   word-wrap: break-word;
-  padding: 22px 8px 0;
+  padding: 23px 8px 0;
   font-family: Verdana, Arial, sans-serif;
   font-size: 13.33px;
   line-height: 1.5;
