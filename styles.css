@@ -86,6 +86,9 @@ a {
   transform: translateY(0);
 }
 
+.curtainB {
+  background-color: #B76BF0;
+}
 
 .video-containerA.slide .curtain,
 .inner-modalB.slide .curtain {
