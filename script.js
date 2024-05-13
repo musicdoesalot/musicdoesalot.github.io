@@ -486,7 +486,6 @@ function onYouTubeIframeAPIReady() {
     exit.addEventListener("click", exitClickHandler);
 }());
 
-
 (function manageOpenModel() {
     function openModal(target) {
         const modal = document.querySelector(target);
@@ -510,7 +509,7 @@ function onYouTubeIframeAPIReady() {
     }
 
     function addPlayerToButtons() {
-        const button = document.querySelector(".playButtonB");
+        const button = document.querySelector(".playbuttonB");
 
         button.addEventListener("click", function (event) {
             openModal(event.currentTarget.dataset.destination);
