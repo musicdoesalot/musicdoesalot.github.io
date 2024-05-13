@@ -273,7 +273,7 @@ a {
   pointer-events: initial;
   border-radius: 0;
   overflow: auto;
-  padding: 8px 8px;
+  /*padding: 8px 8px;*/
 }
 
 .inner-modalA,
