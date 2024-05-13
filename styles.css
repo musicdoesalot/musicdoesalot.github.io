@@ -448,7 +448,7 @@ a {
 
 .playbuttonB {
   position: relative;
-  margin: 12px auto 0;
+  margin: 10px auto 0;
   inset: 0 0 0 0;
   width: 47px;
   height: 47px;
@@ -484,7 +484,7 @@ button:disabled {
 }
 
 .margin-top {
-  margin-top: 6px;
+  margin-top: 12px;
 }
 
 .my-footer a {
