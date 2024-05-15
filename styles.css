@@ -263,7 +263,7 @@ a {
 
 .outer-containerA,
 .modalB {
-  background-color: #15202b;
+  background: #15202b;
 }
 
 .modalA.active,
