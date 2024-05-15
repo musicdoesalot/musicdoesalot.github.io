@@ -86,11 +86,6 @@ a {
   transform: translateY(0);
 }
 
-.outer-containerA,
-.curtainB {
-  background-color: #B76BF0;
-}
-
 .video-containerA.slide .curtain,
 .inner-modalB.slide .curtain {
   transition: 8s ease-in-out;
@@ -266,8 +261,9 @@ a {
     repeating-linear-gradient(90deg, var(--brick1) 0 47.5%, var(--lines) 0 50%, var(--brick1) 0 97.5%, var(--lines) 0 100%) var(--gp-ln);
 }
 
+.outer-containerA,
 .modalB {
- background: #15202b;
+  background-color: #B76BF0;
 }
 
 .modalA.active,
