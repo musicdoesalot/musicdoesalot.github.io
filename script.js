@@ -514,9 +514,12 @@ function onYouTubeIframeAPIReady() {
         button.addEventListener("click", function (event) {
             openModal(event.currentTarget.dataset.destination);
             players.add(".buttonA", {
-                videoId: "yq5KBfbmark"
+                playerVars: {
+                    list: "PLlotB_y9MoPnUWkcIiMkfruZqNd1Q_Ycs",
+                    listType: "playlist"
+                },
+                shuffle: true
             });
-
             // Disable the button after it is clicked once
             button.disabled = true;
 
