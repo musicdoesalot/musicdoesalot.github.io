@@ -398,7 +398,7 @@ a {
 }
 
 .blue-margin-bottom {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   background: none;
 }
 
@@ -423,7 +423,7 @@ a {
 }
 
 .yellow-padding-margin {
-  margin-top: 4px;
+  margin-top:2px;
   padding-left: 40px;
   padding-right: 40px;
   background: none;
