@@ -311,7 +311,7 @@ function onYouTubeIframeAPIReady() {
         src: "https://imagine2.radioca.st/;",
         title: "Fly 104"
     }, {
-        src: "https://getradio.me/luxurious.music",
+        src: "https://luxury.radiotoolkit.com:8000/radio",
         title: "Luxury Music"
     }, {
         src: "https://radio.nueuphoria.com:8443/live",
