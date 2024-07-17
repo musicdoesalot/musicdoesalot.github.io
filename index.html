@@ -1,98 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>Music does a lot.</title>
-    <meta content="noimageindex" name="robots">
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://i.ibb.co/HnYvFRH/fav.png" sizes="32x32">
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Karla:wght@700&display=swap" rel="preload" as="style" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Karla:wght@700&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2" crossorigin as="font" type="font/woff2" />
-    <link rel="preload" href="https://fonts.gstatic.com/s/karla/v31/qkBIXvYC6trAT55ZBi1ueQVIjQTDH52aE0lK.woff2" crossorigin as="font" type="font/woff2" />
-    <!-- Core theme CSS -->
-    <link rel="stylesheet" type="text/css" href="styles.css" media="screen">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Music does a lot.</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://i.ibb.co/HnYvFRH/fav.png" sizes="32x32">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="preload" as="style" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiByp8kv8JHgFVrLGT9Z1xlFQ.woff2" crossorigin as="font" type="font/woff2" />
+  <!-- Core theme CSS -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="screen">
   </head>
   <body>
-    <div class="outer-containerA">
-      <div class="video-containerA">
-        <button class="exitA" type="button" title="Exit" aria-label="Exit"></button>
-        <div class="ratio-keeper">
-          <div class="video playA"></div>
-          <div class="curtain">
-            <div class="flex-container">
-              <div class="heart">
-                <div class="heart-piece-0"></div>
-                <div class="heart-piece-1"></div>
-                <div class="heart-piece-2"></div>
-                <div class="heart-piece-3"></div>
-                <div class="heart-piece-4"></div>
-                <div class="heart-piece-5"></div>
-                <div class="heart-piece-6"></div>
-                <div class="heart-piece-7"></div>
-                <div class="heart-piece-8"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="playA"></div>
-      </div>
-      <div class="video-containerB hide">
-        <button class="exitB" type="button" title="Exit" aria-label="Exit"></button>
-        <div class="ratio-keeper">
-          <div class="video playB"></div>
-          <div class="curtain">
-            <div class="flex-container">
-              <div class="heart">
-                <div class="heart-piece-0"></div>
-                <div class="heart-piece-1"></div>
-                <div class="heart-piece-2"></div>
-                <div class="heart-piece-3"></div>
-                <div class="heart-piece-4"></div>
-                <div class="heart-piece-5"></div>
-                <div class="heart-piece-6"></div>
-                <div class="heart-piece-7"></div>
-                <div class="heart-piece-8"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="playB"></div>
-      </div>
-      <div class="video-containerC hide">
-        <button class="exitC" type="button" title="Exit" aria-label="Exit"></button>
-        <div class="ratio-keeper">
-          <div class="video playC"></div>
-          <div class="curtain">
-            <div class="flex-container">
-              <div class="heart">
-                <div class="heart-piece-0"></div>
-                <div class="heart-piece-1"></div>
-                <div class="heart-piece-2"></div>
-                <div class="heart-piece-3"></div>
-                <div class="heart-piece-4"></div>
-                <div class="heart-piece-5"></div>
-                <div class="heart-piece-6"></div>
-                <div class="heart-piece-7"></div>
-                <div class="heart-piece-8"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="playC"></div>
-      </div>
-    </div>
-    <div class="outer-containerB hide">
+    <div class="containerA">
       <div class="containerB">
         <div class="buttonContainerA">
         </div>
-        <button class="exitD" type="button" title="Exit" aria-label="Exit"></button>
-        <div id="lb" class="modalA">
-          <div class="inner-modalA">
+        <div id="lb" class="modal">
+          <div class="inner-modal">
             <div class="buttonContainerB">
               <a href="https://onlineradiobox.com/gr/heat/playlist/" class="linkButton btnB-primary btnB" target="_blank">heat radio</a>
               <a href="https://onlineradiobox.com/gr/heatclassic/playlist/" class="linkButton btnB-primary btnB" target="_blank">heat classic</a>
@@ -117,76 +45,9 @@
               <a href="https://www.synthwaveradio.eu/" class="linkButton btnB-primary btnB" target="_blank">Synthwave Radio</a>
               <a href="https://onlineradiobox.com/nl/synthwavecity/playlist/" class="linkButton btnB-primary btnB" target="_blank">Synthwave City FM</a>
               <a href="https://onlineradiobox.com/gr/rockmelodic/playlist/" class="linkButton btnB-primary btnB" target="_blank">Rock Melodic Radio</a>
-            </div>
-            <button class="closeA" title="Close" aria-label="Close">&times;</button>
-          </div>
-        </div>
-      </div>
-      <div class="containerC hide">
-        <div class="inner-container">
-          <div class="flex">
-            <div class="blue-margin-bottom">
-              <svg width="136" height="136" viewBox="0 0 136 136">
-                <rect x="0" y="0" width="136" height="136" fill="#0059dd" />
-                <rect x="4" y="4" width="128" height="128" fill="black" />
-                <rect x="8" y="8" width="120" height="120" fill="#0059dd" />
-                <rect x="12" y="12" width="112" height="112" fill="black" />
-                <rect x="16" y="16" width="104" height="104" fill="#0059dd" />
-                <rect x="20" y="20" width="96" height="96" fill="black" />
-                <rect x="24" y="24" width="88" height="88" fill="#0059dd" />
-                <rect x="28" y="28" width="80" height="80" fill="black" />
-                <rect x="32" y="32" width="72" height="72" fill="#0059dd" />
-                <rect x="36" y="36" width="64" height="64" fill="black" />
-                <rect x="40" y="40" width="56" height="56" fill="#0059dd" />
-                <rect x="44" y="44" width="48" height="48" fill="black" />
-                <rect x="48" y="48" width="40" height="40" fill="#0059dd" />
-                <rect x="52" y="52" width="32" height="32" fill="black" />
-                <rect x="56" y="56" width="24" height="24" fill="#0059dd" />
-                <rect x="60" y="60" width="16" height="16" fill="black" />
-                <rect x="64" y="64" width="8" height="8" fill="#0059dd" />
-              </svg>
-            </div>
-            <div class="orange-margin">
-              <h1 class="title-text">Music does a lot.</h1>
-            </div>
-            <div class="yellow-padding-margin">
-              <h2 class="center-text">[ Enjoy The Music ]</h2>
+              <button class="close" title="Close" aria-label="Close">Back To Radios</button>
             </div>
           </div>
-          <button data-destination="#ba" class="playbuttonB" type="button" title="Open" aria-label="Open"></button>
-          <div id="ba" class="modalB">
-            <div class="inner-modalB">
-              <div class="ratio-keeper">
-                <div class="video buttonA"></div>
-                <div class="buttonA"></div>
-                <div class="curtain curtainB">
-                  <div class="flex-container">
-                    <div class="heart">
-                      <div class="heart-piece-0"></div>
-                      <div class="heart-piece-1"></div>
-                      <div class="heart-piece-2"></div>
-                      <div class="heart-piece-3"></div>
-                      <div class="heart-piece-4"></div>
-                      <div class="heart-piece-5"></div>
-                      <div class="heart-piece-6"></div>
-                      <div class="heart-piece-7"></div>
-                      <div class="heart-piece-8"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <button class="closeB" type="button" title="Close" aria-label="Close">&times</button>
-            </div>
-          </div>
-          <footer class="margin-top my-footer">
-            <ul class="footer-top">
-              <li><a href="https://sites.google.com/view/jeremy41/home" target="_blank">About Me</a></li>
-              <li class="divider"><a href="https://sites.google.com/view/musicdoesalot/home" target="_blank">Music Page</a></li>
-              <li><a href="https://sites.google.com/view/jerevegan/home" target="_blank"><span class="green-text">Jere</span><span class="orange-text">Vegan</span></a></li>
-            </ul>
-            <div class="footer-mid">Every Day is a New Opportunity</div>
-            <div class="footer-base">© 2024 Music does a lot.</div>
-          </footer>
         </div>
       </div>
     </div>
