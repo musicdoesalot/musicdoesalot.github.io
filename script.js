@@ -1,4 +1,4 @@
-(function manageRadios() {
+(function manageRadiosAndModal() {
 
     // Define your radio stations
     const radioStations = [{
@@ -74,105 +74,91 @@
     }, {
         src: "https://i4.streams.ovh:2200/ssl/rockmelo?mp=/stream",
         title: "Rock Melodic Radio"
-    }, {
-        buttonClass: "linkButton btnB-primary btnB",
-        title: "Last Song Played"
     }];
 
-    const buttonContainer = document.querySelector(".buttonContainerA");
+    // Define link button for modal
+    const linkButton = {
+        className: "linkButton btnB-primary btnB",
+        destination: "#lb",
+        text: "Last Song Played"
+    };
 
-    // Create audio and button elements for each station
+    // Get button container
+    const buttonContainer = document.querySelector(".buttonContainerA");
+    if (!buttonContainer) {
+        return; // Exit if container not found
+    }
+    // Create single audio element
+    const audio = document.createElement("audio");
+    audio.preload = "none";
+    document.body.appendChild(audio);
+
+    // Create play buttons for each station
     radioStations.forEach(function (station) {
         const button = document.createElement("button");
-        if (station.src) {
-            // Create audio element
-            const audio = document.createElement("audio");
-            audio.title = station.title;
-            audio.preload = "none";
-
-            const source = document.createElement("source");
-            source.src = station.src;
-            source.type = "audio/mpeg";
-            audio.appendChild(source);
-
-            // Add audio element to the body
-            document.body.appendChild(audio);
-
-            // Create button element
-            button.classList.add("playButton", "btnA-primary", "btnA");
-            button.dataset.src = station.src;
-            button.textContent = station.title;
-
-            // Add button to the container
-            buttonContainer.appendChild(button);
-        } else if (station.buttonClass) {
-            button.className = station.buttonClass;
-            button.textContent = station.title;
-            button.classList.add("linkButton", "btnB-primary", "btnB");
-            button.setAttribute("data-destination", "#lb"); // Added this line
-            buttonContainer.appendChild(button);
-        }
+        button.classList.add("playButton", "btnA-primary", "btnA");
+        button.dataset.src = station.src;
+        button.textContent = station.title;
+        buttonContainer.appendChild(button);
     });
 
-    const buttons = document.querySelectorAll(".playButton");
-    const audios = document.querySelectorAll("audio");
-
-    buttons.forEach(function (button, index) {
+    // Add event listeners to play buttons
+    const playButtons = document.querySelectorAll(".playButton");
+    playButtons.forEach(function (button) {
         button.addEventListener("click", function () {
-            // If the button already has 'played' class, remove it
-            if (button.classList.contains("played")) {
-                button.classList.remove("played");
+            const src = button.dataset.src;
+            if (audio.src === src) {
+                // Toggle play/pause for the current station
+                if (audio.paused) {
+                    audio.play();
+                    button.classList.add("played");
+                } else {
+                    audio.pause();
+                    button.classList.remove("played");
+                }
             } else {
-                // Remove 'played' class from all buttons
-                buttons.forEach(function (markAsPlayed) {
-                    markAsPlayed.classList.remove("played");
+                // Play a new station
+                audio.src = src;
+                audio.play();
+                playButtons.forEach(function (btn) {
+                    btn.classList.remove("played");
                 });
-                // Add 'played' class to the clicked button
                 button.classList.add("played");
             }
-
-            audios.forEach(function (audio, i) {
-                if (index === i && audio.currentTime === 0) {
-                    audio.src = button.dataset.src;
-                    audio.play();
-                } else {
-                    audio.src = "";
-                }
-            });
         });
     });
-}());
 
-(function manageLinkButtonOpen() {
+    // Create link button for modal
+    const linkBtn = document.createElement("button");
+    linkBtn.className = linkButton.className;
+    linkBtn.textContent = linkButton.text;
+    linkBtn.dataset.destination = linkButton.destination;
+    buttonContainer.appendChild(linkBtn);
 
+    // Modal handling functions
     function openModal(target) {
         const modal = document.querySelector(target);
-        modal.classList.add("active");
+        if (modal) {
+            modal.classList.add("active");
+        }
     }
-
-    function addLinkToButton() {
-        const modalButton = document.querySelector(".linkButton");
-        modalButton.addEventListener("click", function (event) {
-            //const target = event.currentTarget.dataset.destination;
-            //openModal(target);
-            openModal(event.currentTarget.dataset.destination);
-        });
-    }
-    addLinkToButton();
-
-}());
-
-(function manageLinkButtonClose() {
 
     function closeModal(modal) {
-        modal.classList.remove("active");
+        if (modal) {
+            modal.classList.remove("active");
+        }
     }
 
-    function addCloseEventToModal() {
-        const closeModalElement = document.querySelector(".close");
+    // Add event listener to link button
+    linkBtn.addEventListener("click", function () {
+        openModal(linkBtn.dataset.destination);
+    });
+
+    // Add close event to modal
+    const closeModalElement = document.querySelector(".close");
+    if (closeModalElement) {
         closeModalElement.addEventListener("click", function () {
             closeModal(document.querySelector(".modal"));
         });
     }
-    addCloseEventToModal();
 }());
