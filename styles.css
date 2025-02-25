@@ -65,7 +65,7 @@ a {
 .modal {
   /*background: rgba(0, 0, 0, 0.4);*/
   transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
-  transform: translate(0, -25%);
+  transform: translateY(-25%);
   opacity: 0;
   pointer-events: none;
   z-index: -99;
@@ -102,7 +102,7 @@ a {
 
 .modal.active {
   opacity: 1;
-  transform: scale(1);
+  transform: translateY(0);
   z-index: 1000;
   pointer-events: initial;
   border-radius: 0;
