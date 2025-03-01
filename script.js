@@ -49,14 +49,14 @@
         src: "https://neos.win:48488/1",
         title: "Cavo Paradiso"
     }, {
-        src: "https://strm112.1.fm/atr_mobile_mp3",
-        title: "Amsterdam Trance"
+        src: "https://listen4.myradio24.com/sohofm",
+        title: "Soho FM"
     }, {
         src: "https://myradio24.org/5967",
         title: "90s Eurodance"
     }, {
-        src: "https://stream.radiojar.com/9ndpdg3c0s8uv",
-        title: "Athens Up Radio"
+        src: "https://stream06.pcradio.ru/Vintazh_kafe-hi",
+        title: "Coffee FM"
     }, {
         src: "https://stream.nightride.fm/nightride.mp3",
         title: "Nightride FM"
