@@ -28,6 +28,9 @@
         src: "https://myradio24.org/5129",
         title: "BEST DEEP FM"
     }, {
+        src: "https://stream.deep1.ru/deep1aac",
+        title: "DEEP ONE"
+    }, {
         src: "https://i4.streams.ovh/sc/musicfactory/stream",
         title: "Music Factory"
     }, {
@@ -51,10 +54,6 @@
     }, {
         src: "https://myradio24.org/5967",
         title: "90s Eurodance"
-    }, {
-        src: "https://www.liveradio.es/" +
-        "https://5.restream.one/1392_1",
-        title: "URALSOUND FM"
     }, {
         src: "https://stream.radiojar.com/9ndpdg3c0s8uv",
         title: "Athens Up Radio"
