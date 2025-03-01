@@ -17,10 +17,10 @@
         title: "Relax Club Music"
     }, {
         src: "https://getradio.me/spdeep",
-        title: "Sound Park #Deep"
+        title: "SoundPark #Deep"
     }, {
         src: "https://getradio.me/spclassic",
-        title: "Sound Park Classic"
+        title: "SoundPark Classic"
     }, {
         src: "https://getradio.me/delishdeep",
         title: "Delish Deep"
