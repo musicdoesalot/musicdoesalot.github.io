@@ -13,10 +13,10 @@
         src: "https://getradio.me/svoefm",
         title: "CBOE FM"
     }, {
-        src: "https://getradio.me/rcm",
+        src: "https://relay2.radiotoolkit.com/rcmdeep",
         title: "Relax Club Music"
     }, {
-        src: "https://getradio.me/spdeep",
+        src: "https://relay1.radiotoolkit.com/spdeep",
         title: "SoundPark #Deep"
     }, {
         src: "https://getradio.me/spclassic",
