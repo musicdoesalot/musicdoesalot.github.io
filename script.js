@@ -53,7 +53,7 @@
         title: "90s Eurodance"
     }, {
         src: "https://www.liveradio.es/" +
-        "http://62.16.40.250:8000/uralsoundfm",
+        "https://5.restream.one/1392_1",
         title: "URALSOUND FM"
     }, {
         src: "https://stream.radiojar.com/9ndpdg3c0s8uv",
