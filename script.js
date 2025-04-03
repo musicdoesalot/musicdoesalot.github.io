@@ -1,5 +1,4 @@
 (function manageRadiosAndModal() {
-
     // Define your radio stations
     const radioStations = [{
         src: "https://solid67.streamupsolutions.com/proxy/" +
@@ -74,8 +73,7 @@
         src: "https://i4.streams.ovh:2200/ssl/rockmelo?mp=/stream",
         title: "Rock Melodic Radio"
     }];
-
-    // Define link button for modal
+    // Define the link button for the modal
     const linkButton = {
         className: "linkButton btnB-primary btnB",
         destination: "#lb",
@@ -87,77 +85,133 @@
     if (!buttonContainer) {
         return; // Exit if container not found
     }
-    // Create single audio element
-    const audio = document.createElement("audio");
-    audio.preload = "none";
-    document.body.appendChild(audio);
 
-    // Create play buttons for each station
-    radioStations.forEach(function (station) {
+    /**
+     * Create a play button for a given radio station.
+     * Uses regular functions and adds ARIA attributes for accessibility.
+     */
+    function createPlayButton(station) {
         const button = document.createElement("button");
         button.classList.add("playButton", "btnA-primary", "btnA");
         button.dataset.src = station.src;
         button.textContent = station.title;
+        button.setAttribute("aria-label", "Play " + station.title);
+        return button;
+    }
+
+    /**
+     * Setup and return a single audio element.
+     */
+    function setupAudioPlayer() {
+        const audio = document.createElement("audio");
+        audio.preload = "none";
+        document.body.appendChild(audio);
+        return audio;
+    }
+
+    /**
+     * Setup modal handlers including creating the modal link button,
+     * and adding extra behavior such as closing modal when clicking outside it
+     * or pressing the ESC key.
+     */
+    function setupModalHandlers() {
+        // Function to open modal given its target selector.
+        function openModal(target) {
+            const modal = document.querySelector(target);
+            if (modal) {
+                modal.classList.add("active");
+            }
+        }
+
+        // Create and append the link button for opening the modal.
+        const linkBtn = document.createElement("button");
+        linkBtn.className = linkButton.className;
+        linkBtn.textContent = linkButton.text;
+        linkBtn.setAttribute("data-destination", linkButton.destination);
+        linkBtn.setAttribute("aria-label", linkButton.text);
+        buttonContainer.appendChild(linkBtn);
+
+        // Add event listener to open modal when linkBtn is clicked.
+        linkBtn.addEventListener("click", function () {
+            openModal(linkBtn.getAttribute("data-destination"));
+        });
+
+        // Add event listener to close modal when the close element is clicked.
+        const closeModalElement = document.querySelector(".close");
+        if (closeModalElement) {
+            closeModalElement.addEventListener("click", function () {
+                const modal = document.querySelector(".modal");
+                if (modal) {
+                    modal.classList.remove("active");
+                }
+            });
+        }
+
+        // Optional: Close modal if user clicks outside modal content.
+        window.addEventListener("click", function (event) {
+            const modal = document.querySelector(".modal");
+            if (
+                modal &&
+                modal.classList.contains("active") &&
+                event.target === modal
+            ) {
+                modal.classList.remove("active");
+            }
+        });
+
+        // Optional enhancement: Close modal on ESC key press.
+        document.addEventListener("keydown", function (event) {
+            const modal = document.querySelector(".modal");
+            if (
+                modal &&
+                modal.classList.contains("active") &&
+                event.key === "Escape"
+            ) {
+                modal.classList.remove("active");
+            }
+        });
+    }
+
+    // Setup a single audio element.
+    const audio = setupAudioPlayer();
+
+    // Create and append play buttons for each radio station.
+    radioStations.forEach(function (station) {
+        const button = createPlayButton(station);
         buttonContainer.appendChild(button);
     });
 
-    // Add event listeners to play buttons
-    const playButtons = document.querySelectorAll(".playButton");
-    playButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            const src = button.dataset.src;
+    // Use event delegation on the button container for play buttons.
+    buttonContainer.addEventListener("click", function (event) {
+        const target = event.target;
+        if (target.classList.contains("playButton")) {
+            const src = target.dataset.src;
+            // Compare the current audio src using a simple string comparison.
             if (audio.src === src) {
-                // Toggle play/pause for the current station
+                // Toggle play/pause on the current station.
                 if (audio.paused) {
                     audio.play();
-                    button.classList.add("played");
+                    target.classList.add("played");
                 } else {
                     audio.pause();
-                    button.classList.remove("played");
+                    target.classList.remove("played");
                 }
             } else {
-                // Play a new station
+                // Play the new station.
                 audio.src = src;
                 audio.play();
-                playButtons.forEach(function (btn) {
+                // Remove 'played' class from all play buttons.
+                const playButtons = buttonContainer.querySelectorAll(
+                    ".playButton"
+                );
+                Array.prototype.forEach.call(playButtons, function (btn) {
                     btn.classList.remove("played");
                 });
-                button.classList.add("played");
+                target.classList.add("played");
             }
-        });
+        }
     });
 
-    // Create link button for modal
-    const linkBtn = document.createElement("button");
-    linkBtn.className = linkButton.className;
-    linkBtn.textContent = linkButton.text;
-    linkBtn.dataset.destination = linkButton.destination;
-    buttonContainer.appendChild(linkBtn);
-
-    // Modal handling functions
-    function openModal(target) {
-        const modal = document.querySelector(target);
-        if (modal) {
-            modal.classList.add("active");
-        }
-    }
-
-    function closeModal(modal) {
-        if (modal) {
-            modal.classList.remove("active");
-        }
-    }
-
-    // Add event listener to link button
-    linkBtn.addEventListener("click", function () {
-        openModal(linkBtn.dataset.destination);
-    });
-
-    // Add close event to modal
-    const closeModalElement = document.querySelector(".close");
-    if (closeModalElement) {
-        closeModalElement.addEventListener("click", function () {
-            closeModal(document.querySelector(".modal"));
-        });
-    }
+    // Initialize modal handlers.
+    setupModalHandlers();
 }());
