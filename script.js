@@ -1,4 +1,20 @@
 (function manageRadiosAndModal() {
+    // Configuration object for selectors and settings
+    const CONFIG = {
+        linkButton: {
+            className: "linkButton btnB-primary btnB",
+            destination: "#lastSongModal",
+            text: "Last Song Played"
+        },
+        playButton: {
+            className: "playButton btnA-primary btnA"
+        },
+        selectors: {
+            container: "#radioButtonContainer",
+            modal: "#lastSongModal",
+            modalClose: "#modalClose"
+        }
+    };
 
     // Define your radio stations
     const radioStations = [{
@@ -75,15 +91,8 @@
         title: "Rock Melodic Radio"
     }];
 
-    // Link button config
-    const linkButton = {
-        className: "linkButton btnB-primary btnB",
-        destination: "#lb",
-        text: "Last Song Played"
-    };
-
     // Get button container (with early exit)
-    const buttonContainer = document.querySelector(".buttonContainerA");
+    const buttonContainer = document.querySelector(CONFIG.selectors.container);
     if (!buttonContainer) {
         return; // Exit if container not found
     }
@@ -96,9 +105,10 @@
     // Play button creator
     function createPlayButton(station) {
         const button = document.createElement("button");
-        button.className = "playButton btnA-primary btnA";
+        button.className = CONFIG.playButton.className;
         button.textContent = station.title;
         button.dataset.src = station.src;
+        button.dataset.radioButton = "";
         button.setAttribute("aria-label", "Play " + station.title);
         return button;
     }
@@ -119,11 +129,14 @@
             audio.src = src;
             audio.play();
 
-            const allButtons = buttonContainer.querySelectorAll(".playButton");
-            Array.prototype.forEach.call(allButtons, function (btn) {
+            const allButtons = buttonContainer.querySelectorAll(
+                "[data-radio-button]"
+            );
+            allButtons.forEach(function (btn) {
                 btn.classList.remove("played");
             });
             button.classList.add("played");
+
         }
     }
 
@@ -143,18 +156,19 @@
 
     function setupModalHandlers() {
         const linkBtn = document.createElement("button");
-        linkBtn.className = linkButton.className;
-        linkBtn.textContent = linkButton.text;
-        linkBtn.setAttribute("data-destination", linkButton.destination);
-        linkBtn.setAttribute("aria-label", linkButton.text);
+        linkBtn.className = CONFIG.linkButton.className;
+        linkBtn.textContent = CONFIG.linkButton.text;
+        linkBtn.dataset.destination = CONFIG.linkButton.destination;
+        linkBtn.dataset.linkButton = "";
+        linkBtn.setAttribute("aria-label", CONFIG.linkButton.text);
         buttonContainer.appendChild(linkBtn);
 
         linkBtn.addEventListener("click", function () {
             openModal(linkBtn.dataset.destination);
         });
 
-        const modal = document.querySelector(linkButton.destination);
-        const closeBtn = modal?.querySelector(".close");
+        const modal = document.querySelector(CONFIG.selectors.modal);
+        const closeBtn = modal?.querySelector(CONFIG.selectors.modalClose);
 
         if (closeBtn) {
             closeBtn.addEventListener("click", function () {
@@ -181,9 +195,9 @@
 
     // Event delegation with closest()
     buttonContainer.addEventListener("click", function (e) {
-        const button = e.target.closest(".playButton");
+        const button = e.target.closest("[data-radio-button]");
         if (!button) {
-            return; // Exit if container not found
+            return; // Exit if not a radio button
         }
         handlePlayButtonClick(button.dataset.src, button);
     });
