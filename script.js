@@ -1,6 +1,10 @@
 (function manageRadiosAndModal() {
     // Configuration object for selectors and settings
     const CONFIG = {
+        audio: {
+            preload: "none",
+            volume: 1.0 // Default volume (100%)
+        },
         linkButton: {
             className: "linkButton btnB-primary btnB",
             destination: "#lastSongModal",
@@ -89,7 +93,7 @@
     }, {
         src: "https://i4.streams.ovh:2200/ssl/rockmelo?mp=/stream",
         title: "Rock Melodic Radio"
-    }];
+    }]; //
 
     // Get button container (with early exit)
     const buttonContainer = document.querySelector(CONFIG.selectors.container);
@@ -97,9 +101,10 @@
         return; // Exit if container not found
     }
 
-    // Audio setup
+    // Audio setup with volume control
     const audio = document.createElement("audio");
-    audio.preload = "none";
+    audio.preload = CONFIG.audio.preload;
+    audio.volume = CONFIG.audio.volume; // Set default volume here
     document.body.appendChild(audio);
 
     // Play button creator
@@ -136,7 +141,6 @@
                 btn.classList.remove("played");
             });
             button.classList.add("played");
-
         }
     }
 
