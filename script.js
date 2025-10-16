@@ -30,7 +30,7 @@
         "neukptkl?mp=/stream",
         title: "heat classic"
     }, {
-        src: "https://relay2.radiotoolkit.com/svoefm",
+        src: "https://relay4.radiotoolkit.com/svoefm",
         title: "CBOE FM"
     }, {
         src: "https://relay2.radiotoolkit.com/rcmdeep",
