@@ -39,7 +39,7 @@
         src: "https://relay1.radiotoolkit.com/spdeep",
         title: "SoundPark #Deep"
     }, {
-        src: "https://relay2.radiotoolkit.com/spclassic",
+        src: "https://relay4.radiotoolkit.com/spclassic",
         title: "SoundPark Classic"
     }, {
         src: "https://relay2.radiotoolkit.com/delishdeep",
