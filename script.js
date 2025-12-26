@@ -33,7 +33,7 @@
         src: "https://relay4.radiotoolkit.com/svoefm",
         title: "CBOE FM"
     }, {
-        src: "https://relay.radiotoolkit.com/rcmdeep",
+        src: "https://relay4.radiotoolkit.com/rcmdeep",
         title: "Relax Club Music"
     }, {
         src: "https://relay4.radiotoolkit.com/spdeep",
