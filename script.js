@@ -33,16 +33,16 @@
         src: "https://relay4.radiotoolkit.com/svoefm",
         title: "CBOE FM"
     }, {
-        src: "https://relay2.radiotoolkit.com/rcmdeep",
+        src: "https://relay4.radiotoolkit.com/rcmdeep",
         title: "Relax Club Music"
     }, {
-        src: "https://relay1.radiotoolkit.com/spdeep",
+        src: "https://relay4.radiotoolkit.com/spdeep",
         title: "SoundPark #Deep"
     }, {
         src: "https://relay4.radiotoolkit.com/spclassic",
         title: "SoundPark Classic"
     }, {
-        src: "https://relay2.radiotoolkit.com/delishdeep",
+        src: "https://relay4.radiotoolkit.com/delishdeephd",
         title: "Delish Deep"
     }, {
         src: "https://myradio24.org/5129",
